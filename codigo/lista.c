@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "lista.h"
+#include <lista.h>
 
 void inserir_nodo(Nodo **lista, float num){
     Nodo *aux, *novo = malloc(sizeof(Nodo));

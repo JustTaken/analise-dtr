@@ -1,6 +1,8 @@
 #ifndef LISTA_H_INCLUDED
 #define LISTA_H_INCLUDED
 
+#include <stdio.h>
+
 typedef struct nodo{
     float valor_conc; // Valor da concentração
     struct nodo *proximo; // Ponteiro para o próximo espaço

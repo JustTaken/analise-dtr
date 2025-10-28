@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "lista.h"
+#include <lista.h>
 
 float integra_concentracao(Nodo *lista, float intervalo){
     if(!lista){

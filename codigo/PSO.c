@@ -3,9 +3,8 @@
 #include <time.h>
 #include <float.h>
 #include <string.h>
-#include "lista.h"
-#include "janioMath.h"
-
+#include <lista.h>
+#include <janioMath.h>
 
 #define RNG_UNIFORM() (rand()/(double)RAND_MAX) // Gera valor entre 0 e 1
 #define DIMENSOES 2     // Quantidade de variáveis no problema para ser analisado
@@ -21,7 +20,11 @@ const float c2 = 0.5;   // coeficiente social (peso do Gbest)
 const float A_MIN = 0.0, A_MAX = 200.0; // Normalmente usado em um problema ao estilo de um mapa topográfico com vários pontos máximo e mínimos em Z apesar de representar um plano x e y
 const float B_MIN = 0.0, B_MAX = 200.0; // No entanto, como o algoritmo não será usado para um problema em um perfil topográfico, a delimitação e a análise dos valores sempre será > 0
 
-int main(int argc, char *argv[]){
+int main() {
+    return 0;
+}
+
+int main2(int argc, char *argv[]){
     FILE *fptr;               // Ponteiro de manipulação de arquivo
     char BUFFER[256];         // Vetor de 256 bytes para armazenar string
     char *data_read;          // Ponteiro para um dado específico do arquivo .csv
@@ -41,7 +44,7 @@ int main(int argc, char *argv[]){
     }
 
     for (int i = 0; i < 7; i++){ // Ignore as primeiras 7 linhas do arquivo .csv
-        fgets(BUFFER, sizeof(BUFFER), fptr);
+        void* ptr = fgets(BUFFER, sizeof(BUFFER), fptr);
     }
 
     while (fgets(BUFFER, sizeof(BUFFER), fptr)){ // Loop de leitura do arquivo .csv começando da linha 8 até o fim
@@ -58,7 +61,7 @@ int main(int argc, char *argv[]){
 
     }
 
-    tmp_integral = integra_lista(lista, 1.0);
+    tmp_integral = integra_concentracao(lista, 1.0);
     printf("integral: %f", tmp_integral);
 
     imprimir_lista(lista);
