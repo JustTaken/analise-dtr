@@ -58,7 +58,7 @@ int main(int argc, char *argv[]){
 
     }
 
-    tmp_integral = integra_lista(lista, 1.0);
+    tmp_integral = integra_concentracao(lista, 1.0);
     printf("integral: %f", tmp_integral);
 
     imprimir_lista(lista);
