@@ -1,41 +1,26 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <lista.h>
+#include <janioMath.h>
 
-float integra_concentracao(Nodo *lista, float intervalo){
-    if(!lista){
-        printf("LISTA VAZIA PARA INTEGRACAO, RETORNANDO 0");
-        return 0.0;
-    }
-
+float integra_concentracao(Vetor_float lista, float intervalo){
     float s = 0.0;
-    Nodo *atual = lista;
-    Nodo *proximo = lista->proximo;
 
-    while (proximo != NULL){
-        s += (atual->valor_conc + proximo->valor_conc) * intervalo / 2.0;
-        atual = proximo;
-        proximo = proximo->proximo;
+    for (int i = 0; i < lista.quantidade + 1; i++) {
+        float atual = lista.items[i];
+        float proximo = lista.items[i + 1];
+
+        s += (atual + proximo) * intervalo / 2.0;
     }
+
     return s;
 }
 
-
-
-float normaliza_concentracao(Nodo *lista, float resultado_integral){
-    if(!lista){
-        printf("LISTA VAZIA PARA NORMALIZACAO, RETORNANDO 0");
-        return 0.0;
-    }
-
+Vetor_float normaliza_concentracao(Vetor_float lista, float resultado_integral){
     float s = 0.0;
-    Nodo *atual = lista;
-    Nodo *proximo = lista->proximo;
+    Vetor_float lista_e = vetor_iniciar_float(lista.quantidade);
 
-    while (proximo != NULL){
-        s += (atual->valor_conc/resultado_integral);
-        atual = proximo;
-        proximo = proximo->proximo;
+    for (int i = 0; i < lista.quantidade; i++) {
+        float valor = lista.items[i];
+        vetor_adicionar_float(&lista_e, valor / resultado_integral);
     }
-    return s;
+
+    return lista_e;
 }

@@ -5,6 +5,7 @@
 #include <string.h>
 #include <lista.h>
 #include <janioMath.h>
+#include <vetor.h>
 
 #define RNG_UNIFORM() (rand()/(double)RAND_MAX) // Gera valor entre 0 e 1
 #define DIMENSOES 2     // Quantidade de variáveis no problema para ser analisado
@@ -20,19 +21,19 @@ const float c2 = 0.5;   // coeficiente social (peso do Gbest)
 const float A_MIN = 0.0, A_MAX = 200.0; // Normalmente usado em um problema ao estilo de um mapa topográfico com vários pontos máximo e mínimos em Z apesar de representar um plano x e y
 const float B_MIN = 0.0, B_MAX = 200.0; // No entanto, como o algoritmo não será usado para um problema em um perfil topográfico, a delimitação e a análise dos valores sempre será > 0
 
-int main() {
-    return 0;
-}
+// int main() {
+//     Vetor_int vetor = vetor_iniciar_int(10);
+//     vetor_adicionar_int(&vetor, 10);
+//     return 0;
+// }
 
-int main2(int argc, char *argv[]){
-    FILE *fptr;               // Ponteiro de manipulação de arquivo
+Vetor_float ler_csv(const char* nome) {
     char BUFFER[256];         // Vetor de 256 bytes para armazenar string
     char *data_read;          // Ponteiro para um dado específico do arquivo .csv
-    char *filename = argv[1]; // Argumento string do caminho para o arquivo a ser lido fornecido
-    Nodo *lista = NULL;  // Ponteiro para alocação dinâmica dos valores extraidos do arquivo .csv
-    float tmp_integral;
+    FILE *fptr;               // Ponteiro de manipulação de arquivo
+    Vetor_float lista = vetor_iniciar_float(20);
 
-    fptr = fopen(filename, "r"); /*A função para abrir o arquivo recebe dois parâmetros, o diretório do arquivo a ser aberto e o modo que ele será trabalhado:
+    fptr = fopen(nome, "r"); /*A função para abrir o arquivo recebe dois parâmetros, o diretório do arquivo a ser aberto e o modo que ele será trabalhado:
         w - Grava em um arquivo
         a - Adiciona novos dados em um arquivo
         r - Lê um arquivo
@@ -40,7 +41,7 @@ int main2(int argc, char *argv[]){
 
     if (fptr == NULL){
         printf("Nao ha arquivo o especificado\n");
-        return 1;
+        exit(1);
     }
 
     for (int i = 0; i < 7; i++){ // Ignore as primeiras 7 linhas do arquivo .csv
@@ -55,17 +56,34 @@ int main2(int argc, char *argv[]){
         for (int i = 1; i < 4; i++){ // Aponte o data_read para ler os dados da quarta coluna da linha previamente carregado nele do buffer
             data_read = strtok(NULL, ",");
         }
-        inserir_nodo(&lista, atof(data_read)); // Inseri o valor extraido de string para float em uma lista simples encadeada de valores de concentração
-        printf("extraido: %s\n", data_read);   
-        
 
+        float valor = atof(data_read);
+        vetor_adicionar_float(&lista, valor);
+
+        // inserir_nodo(&lista, ); // Inseri o valor extraido de string para float em uma lista simples encadeada de valores de concentração
+        printf("extraido: %s\n", data_read);
     }
 
-    tmp_integral = integra_concentracao(lista, 1.0);
-    printf("integral: %f", tmp_integral);
+    float integral_concentracao = integra_concentracao(lista, 1.0);
+    Vetor_float lista_e = normaliza_concentracao(lista, integral_concentracao);
 
-    imprimir_lista(lista);
-    liberar_lista(lista);
+    // tmp_integral = integra_concentracao(lista, 1.0);
+    // printf("integral: %f", tmp_integral);
+
+    // imprimir_lista(lista);
+    // liberar_lista(lista);
+
     fclose(fptr);
+
+    return lista;
+}
+
+int main(int argc, char *argv[]){
+    char *nome = argv[1]; // Argumento string do caminho para o arquivo a ser lido fornecido
+    // Nodo *lista = NULL;  // Ponteiro para alocação dinâmica dos valores extraidos do arquivo .csv
+    // float tmp_integral;
+
+    Vetor_float lista = ler_csv(nome);
+
     return 0;
 }
