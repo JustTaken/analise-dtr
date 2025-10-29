@@ -21,19 +21,14 @@ const float c2 = 0.5;   // coeficiente social (peso do Gbest)
 const float A_MIN = 0.0, A_MAX = 200.0; // Normalmente usado em um problema ao estilo de um mapa topográfico com vários pontos máximo e mínimos em Z apesar de representar um plano x e y
 const float B_MIN = 0.0, B_MAX = 200.0; // No entanto, como o algoritmo não será usado para um problema em um perfil topográfico, a delimitação e a análise dos valores sempre será > 0
 
-// int main() {
-//     Vetor_int vetor = vetor_iniciar_int(10);
-//     vetor_adicionar_int(&vetor, 10);
-//     return 0;
-// }
 
-Vetor_float ler_csv(const char* nome) {
+Vetor_float ler_csv(const char* arquivo) {
     char BUFFER[256];         // Vetor de 256 bytes para armazenar string
     char *data_read;          // Ponteiro para um dado específico do arquivo .csv
     FILE *fptr;               // Ponteiro de manipulação de arquivo
     Vetor_float lista = vetor_iniciar_float(20);
 
-    fptr = fopen(nome, "r"); /*A função para abrir o arquivo recebe dois parâmetros, o diretório do arquivo a ser aberto e o modo que ele será trabalhado:
+    fptr = fopen(arquivo, "r"); /*A função para abrir o arquivo recebe dois parâmetros, o diretório do arquivo a ser aberto e o modo que ele será trabalhado:
         w - Grava em um arquivo
         a - Adiciona novos dados em um arquivo
         r - Lê um arquivo
@@ -45,7 +40,7 @@ Vetor_float ler_csv(const char* nome) {
     }
 
     for (int i = 0; i < 7; i++){ // Ignore as primeiras 7 linhas do arquivo .csv
-        void* ptr = fgets(BUFFER, sizeof(BUFFER), fptr);
+        void *ptr = fgets(BUFFER, sizeof(BUFFER), fptr);
     }
 
     while (fgets(BUFFER, sizeof(BUFFER), fptr)){ // Loop de leitura do arquivo .csv começando da linha 8 até o fim
@@ -57,33 +52,23 @@ Vetor_float ler_csv(const char* nome) {
             data_read = strtok(NULL, ",");
         }
 
-        float valor = atof(data_read);
-        vetor_adicionar_float(&lista, valor);
-
-        // inserir_nodo(&lista, ); // Inseri o valor extraido de string para float em uma lista simples encadeada de valores de concentração
+        vetor_adicionar_float(&lista, atof(data_read));
         printf("extraido: %s\n", data_read);
+
     }
 
     float integral_concentracao = integra_concentracao(lista, 1.0);
     Vetor_float lista_e = normaliza_concentracao(lista, integral_concentracao);
 
-    // tmp_integral = integra_concentracao(lista, 1.0);
-    // printf("integral: %f", tmp_integral);
-
-    // imprimir_lista(lista);
-    // liberar_lista(lista);
 
     fclose(fptr);
-
     return lista;
 }
 
 int main(int argc, char *argv[]){
-    char *nome = argv[1]; // Argumento string do caminho para o arquivo a ser lido fornecido
-    // Nodo *lista = NULL;  // Ponteiro para alocação dinâmica dos valores extraidos do arquivo .csv
-    // float tmp_integral;
+    char *arquivo = argv[1]; // Argumento string do caminho para o arquivo a ser lido fornecido
 
-    Vetor_float lista = ler_csv(nome);
+    Vetor_float lista = ler_csv(arquivo);
 
     return 0;
 }
