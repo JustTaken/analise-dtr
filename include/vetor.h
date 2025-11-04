@@ -1,33 +1,27 @@
 #pragma once
 
+#include <stdio.h>
 #include <stdlib.h>
 
-void* vetor_realloc(void*, int, int);
-
-#define VETOR(tipo) typedef struct {\
-    int quantidade; \
+// Macro para definir a estrutura do vetor para um tipo.
+#define VETOR(tipo) \
+typedef struct{     \
     int capacidade; \
-    tipo *items ;\
-} Vetor_##tipo; \
+    int quantidade; \
+    tipo *item;     \
+} Vetor_##tipo;
 
+// Macro para declaração de todas as funções do vetor;
 #define VETOR_DECLARACAO(tipo) \
-VETOR(tipo); \
-Vetor_##tipo vetor_iniciar_##tipo(int); \
-void vetor_adicionar_##tipo(Vetor_##tipo*, tipo); \
+VETOR(tipo);                   \
+Vetor_##tipo vetor_iniciar_##tipo(int capacidade);                       \
+void         vetor_realocar_##tipo(Vetor_##tipo *vetor, int capacidade); \
+void         vetor_adicionar_##tipo(Vetor_##tipo *vetor, tipo item);     \
+void         vetor_liberar_##tipo(Vetor_##tipo *vetor);                  \
+void         vetor_definir_##tipo(Vetor_##tipo *vetor, int indice, tipo item); \
+void         vetor_imprimir_##tipo(Vetor_##tipo *vetor, const char *formato);
 
-#define VETOR_IMPLEMENTACAO(tipo) \
-Vetor_##tipo vetor_iniciar_##tipo(int capacidade) {\
-    Vetor_##tipo vetor = {0, capacidade, malloc(sizeof(tipo) * capacidade) }; \
-    return vetor; \
-}\
-void vetor_adicionar_##tipo(Vetor_##tipo *vetor, tipo item) {\
-    if (vetor->capacidade <= vetor->quantidade) {\
-        vetor->capacidade = vetor->capacidade * 2; \
-        vetor_realloc(&vetor->items, sizeof(tipo), vetor->capacidade); \
-    }\
-    vetor->items[vetor->quantidade] = item; \
-    vetor->quantidade += 1; \
-}
-
+VETOR_DECLARACAO(char);
 VETOR_DECLARACAO(int);
 VETOR_DECLARACAO(float);
+VETOR_DECLARACAO(double);
