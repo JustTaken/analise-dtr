@@ -12,8 +12,15 @@
 #define ITERACOES 200   // Quantidade de loops que o algoritmo executará até encontrar solução
 #define POPULACAO 20    // Quantidade de partículas de busca do algoritmo
 
+typedef struct{
+    float *position;
+    float *velocity;
+    float *pBest_position;
+    float pBest_fitness;
+} Particula;
+
 // --- Hiperparâmetros do PSO ---
-const float w = 0.5;    // inércia
+const float w = 0.7298;    // inércia
 const float c1 = 0.5;   // coeficiente cognitivo (peso do Pbest)
 const float c2 = 0.5;   // coeficiente social (peso do Gbest)
 
@@ -27,7 +34,8 @@ int main(int argc, char *argv[]){
     char BUFFER[256];         // Vetor de 256 bytes para armazenar string
     char *data_read;          // Ponteiro para um dado específico do arquivo .csv
     FILE *fptr;               // Ponteiro de manipulação de arquivo
-    Vetor_float concentracao = vetor_iniciar_float(2);// Ponteiro que será alocado dinamicamente para um vetor
+    Vetor_float concentracao = vetor_iniciar_float(2);// Uma lista alocada dinamicamente com a biblioteca vetor.h
+    srand(time(NULL)); // Inicializa uma seed aleatória
     
     
 
@@ -57,7 +65,7 @@ int main(int argc, char *argv[]){
         for (int i = 1; i < 4; i++){ // Aponte o data_read para ler os dados da quarta coluna da linha previamente carregado nele do buffer
             data_read = strtok(NULL, ",");
         }
-        
+
         vetor_adicionar_float(&concentracao, atof(data_read));
     }
 
@@ -65,13 +73,13 @@ int main(int argc, char *argv[]){
     // 1. Int ｩ
     float integral_concentracao = 0.0;
     for (int i = 0; i < concentracao.quantidade; i++){
-        integral_concentracao += integra(concentracao.item[i], concentracao.item[i+1], 1.0);
+        integral_concentracao += integra_float(concentracao.item[i], concentracao.item[i+1], 1.0);
     }
 
     // 2. E
     Vetor_float E_normalizado = vetor_iniciar_float(concentracao.quantidade);
     for(int i = 0; i < concentracao.quantidade; i++){
-        vetor_adicionar_float(&E_normalizado, normaliza(concentracao.item[i], integral_concentracao));
+        vetor_adicionar_float(&E_normalizado, normaliza_float(concentracao.item[i], integral_concentracao));
     }
     
     // 3. T*E
@@ -83,7 +91,7 @@ int main(int argc, char *argv[]){
     // 4. int(T*E)
     float integral_T_E = 0.0;
     for (int i = 0; i < concentracao.quantidade; i++){
-        integral_T_E += integra(T_E.item[i], T_E.item[i+1], 1.0);
+        integral_T_E += integra_float(T_E.item[i], T_E.item[i+1], 1.0);
     }
     
     // 5. Theta
