@@ -1,4 +1,5 @@
 #include <janioMath.h>
+#include <math.h>
 
 // Macro para implementação das funções para cada tipo
 #define JANIO_MATH_IMPL(tipo) \
@@ -7,6 +8,12 @@ tipo integra_##tipo(tipo data_A, tipo data_B, tipo intervalo) { \
 } \
 tipo normaliza_##tipo(tipo data_A, tipo int_res) { \
     return data_A / int_res; \
+} \
+tipo ln_##tipo(tipo data_A){ \
+    if (data_A <= 0.0){         \
+        return 0.0;            \
+    } \
+    return log(data_A);      \
 }
 
 // Implementa as funções para cada tipo

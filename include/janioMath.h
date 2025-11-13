@@ -3,8 +3,8 @@
 
 #define JANIO_MATH_DECL(tipo) \
 tipo integra_##tipo(tipo data_A, tipo data_B, tipo intervalo); \
-tipo normaliza_##tipo(tipo data_A, tipo int_res);               \
-
+tipo normaliza_##tipo(tipo data_A, tipo int_res);              \
+tipo ln_##tipo(tipo data_A);                                   \
 
 JANIO_MATH_DECL(int)
 JANIO_MATH_DECL(float)
