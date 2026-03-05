@@ -93,19 +93,12 @@ function get_integral_ratio(b::Number, c::Number, s::Number, e::Number, data::Nu
     data / parameterized
 end
 
-function plot(x::Vector{<:Number}, y::Vector{<:Number}, fit::Vector{<:Number})
-    fig = Figure()
-    ax = Axis(fig[1, 1], xlabel = "Time", ylabel = "Current", title = "DTR")
-    scatter!(ax, x, y, color = :orange)
-    scatter!(ax, x, fit, color = :red)
-
-    fig
-end
-
 function add_data_to_figure(path, fig, row, col)
     x, y = load_data(path)
     fit, param, r = find_fit(x, y)
+
     println(path, " := A(", param[1], "), B(", param[2], "), C(", param[3], "), resto(", r, ")")
+
     ax = Axis(fig[row, col])
     scatter!(ax, x, y, color = :orange, markersize=4)
     scatter!(ax, x, fit, color = :red, markersize=4)
@@ -134,4 +127,3 @@ function plot_dir(path::String, columns::Int64)
 
     fig
 end
-
