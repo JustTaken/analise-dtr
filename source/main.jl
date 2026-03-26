@@ -4,10 +4,10 @@ using DataFrames
 using StatsBase
 
 # Heuristics:
-#   The data starts at the same time that the mapping function starts
-#   Therefore, caution has to be taken when writing down the data to 
+#   The data starts at the same time that the mapping function starts,
+#   therefore, caution has to be taken when writing down the data to
 #   csv format, because if the experimental data has some delay before
-#   it starts having the predefined behaviour 
+#   it starts having the expected behaviour byt the parameterized function 
 
 A = 1.0
 B = 0.5
@@ -93,35 +93,45 @@ function find_fit(x::Vector{<:Number}, y::Vector{<:Number})
     f(p,  x), p, m
 end
 
-function integral(a::Number, b::Number, c::Number, m::Number, s::Number, e::Number)::Number
-    a * ((exp(-b * s) - exp(-b * e)) / b + (exp(-c * e) - exp(-c * s)) / c) + (e - s) * m
+function integral(a::Number, b::Number, c::Number, s::Number, e::Number)::Number
+    a * ((exp(-b * s) - exp(-b * e)) / b + (exp(-c * e) - exp(-c * s)) / c)
 end
 
 function get_integral_ratio(b::Number, c::Number, s::Number, e::Number, data::Number)::Number
-    parameterized = integral(1.0, b, c, 0, s, e)
+    parameterized = integral(1.0, b, c, s, e)
 
     data / parameterized
 end
 
 function t_mean(a::Number, b::Number, c::Number)
-    return b * c / (b - c) * (1 / c^2 - 1 / b^2)
+    return (b * c) / (b - c) * (1 / c^2 - 1 / b^2)
 end
 
-function variance(a::Number, b::Number, c::Number)
+function parameters(a::Number, b::Number, c::Number)
     tm = t_mean(a, b, c)
 
-    fac1 = b * c / (b - c)
-    fac2 = 2 * tm
-    fac3 = tm / (2c) + 1 / c^2 + 1 / c^3 - tm / (2b) - 1 / b^2 - 1 / b^3
+    fac1 = (b * c) / (b - c)
+    fac2 = tm^2 / c - (2 * tm) / c^2 + 2 / c^3 - tm^2 / b + (2 * tm) / b^2 - 2 / b^3
 
-    return fac1 * fac2 * fac3
+    return tm, fac1 * fac2
+end
+
+function rd(x)
+    return round(x, digits=2)
 end
 
 function add_data_to_figure(path, fig, row, col)
     x, y, m = load_data(path)
     fit, param, r = find_fit(x, y)
 
-    println(path, " := A(", param[1], "), B(", param[2], "), C(", param[3], "), resto(", r, ")")
+    a = param[1]
+    b = param[2]
+    c = param[3]
+
+    tm, var = parameters(a, b, c)
+    n = tm^2 / var
+
+    println(path, " := A(", rd(a), "), B(", rd(b), "), C(", rd(c), "), tm(", rd(tm), "), var(", rd(var), "), n(", rd(n), "), resto(", rd(r), ")")
 
     ax = Axis(fig[row, col])
     scatter!(ax, x, y, color = :orange, markersize=4)
