@@ -3,6 +3,12 @@ using CairoMakie
 using DataFrames
 using StatsBase
 
+# Heuristics:
+#   The data starts at the same time that the mapping function starts
+#   Therefore, caution has to be taken when writing down the data to 
+#   csv format, because if the experimental data has some delay before
+#   it starts having the predefined behaviour 
+
 A = 1.0
 B = 0.5
 C = 0.5
@@ -10,17 +16,21 @@ Delta = 0.5
 
 const Param = Vector{Number}
 
-function load_data(file)
-    data = DataFrame(CSV.File(open(file), header=1))
+function convert_current(in_current::Float64)
+    return in_current * 1.4 + 0.5
+end
 
-    y = data[!, "Current"]
+function load_data(file)
+    data = DataFrame(CSV.File(file, header=1))
+
+    y = convert_current.(data[!, "Current"])
     l = length(y)
 
     m = mean(y[l - Int64(round(l / 10)):l])
     y = y .- m
     x = collect(0:l - 1)
 
-    x, y
+    x, y, m
 end
 
 function f(p::Param, x::Vector{<:Number})::Vector{<:Number}
@@ -83,18 +93,32 @@ function find_fit(x::Vector{<:Number}, y::Vector{<:Number})
     f(p,  x), p, m
 end
 
-function integral(b::Number, c::Number, s::Number, e::Number)::Number
-    (exp(-b * s) - exp(-b * e)) / b + (exp(-c * e) - exp(-c * s)) / c
+function integral(a::Number, b::Number, c::Number, m::Number, s::Number, e::Number)::Number
+    a * ((exp(-b * s) - exp(-b * e)) / b + (exp(-c * e) - exp(-c * s)) / c) + (e - s) * m
 end
 
 function get_integral_ratio(b::Number, c::Number, s::Number, e::Number, data::Number)::Number
-    parameterized = integral(b, c, s, e)
+    parameterized = integral(1.0, b, c, 0, s, e)
 
     data / parameterized
 end
 
+function t_mean(a::Number, b::Number, c::Number)
+    return b * c / (b - c) * (1 / c^2 - 1 / b^2)
+end
+
+function variance(a::Number, b::Number, c::Number)
+    tm = t_mean(a, b, c)
+
+    fac1 = b * c / (b - c)
+    fac2 = 2 * tm
+    fac3 = tm / (2c) + 1 / c^2 + 1 / c^3 - tm / (2b) - 1 / b^2 - 1 / b^3
+
+    return fac1 * fac2 * fac3
+end
+
 function add_data_to_figure(path, fig, row, col)
-    x, y = load_data(path)
+    x, y, m = load_data(path)
     fit, param, r = find_fit(x, y)
 
     println(path, " := A(", param[1], "), B(", param[2], "), C(", param[3], "), resto(", r, ")")
