@@ -35,7 +35,7 @@
 
     \startplaceformula[reference={eq:mean_time}]
         \startformula
-            \bar{t} = \int_0^\infty t E (t) \, d t
+            \getbuffer[tm] = \int_0^\infty t E (t) \, d t
         \stopformula
     \stopplaceformula
 
@@ -43,7 +43,7 @@
 
     \startplaceformula[reference={eq:variance}]
         \startformula
-            \sigma^2 = \int_0^\infty (t - \bar{t})^2 E (t) \, d t
+            \sigma^2 = \int_0^\infty (t - \getbuffer[tm])^2 E (t) \, d t
         \stopformula
     \stopplaceformula
 \stopchapter
