@@ -1,0 +1,129 @@
+\startchapter[title=Desenvolvimento]
+    Para desenvolver analiticamente uma solução genérica dos parâmetros cinéticos a partir da \in{Equação}[eq:concentration_adjust], é necessário carregar os coeficiêntes da função durante a aplicação das integrais. Começando com a integral da \in{Equação}[eq:concentration_adjust].
+    
+    \startbuffer[b]
+        e^{-b t}
+    \stopbuffer
+
+    \startbuffer[c]
+        e^{-c t}
+    \stopbuffer
+
+    \startbuffer[tm]
+        \bar{t}
+    \stopbuffer
+
+    \startbuffer[k]
+        \fraction{b c}{c - b}
+    \stopbuffer
+
+    \startbuffer[ki]
+        \fraction{b c}{b - c}
+    \stopbuffer
+
+    \startplaceformula[reference=eq:concentration_integral]
+        \startformula
+            \startequationsystem[align=2:left]
+                \NC \int C (t) \, d t \NC = \int a \left( \getbuffer[b] - \getbuffer[c] \right) \, d t \NR
+                \NC \NC = a \left( \fraction{\getbuffer[c]}{c} - \fraction{\getbuffer[b]}{b} \right) \NR
+            \stopequationsystem
+        \stopformula
+    \stopplaceformula
+
+    A \in{Equação}[eq:concentration_integral] é a forma indefinida da integral definida necessária para encontrar $E (t)$.
+
+    \startplaceformula[reference=eq:distribution]
+        \startformula
+            \startequationsystem[align=2:left]
+                \NC E (t) \NC = \fraction{C (t)}{\int_0^\infty C (t) \, d t} \NR
+                \NC \NC = \fraction{b c}{a (c - b)} C (t) \NR
+                \NC \NC = \getbuffer[k] \left( \getbuffer[b] - \getbuffer[c] \right) \NR
+            \stopequationsystem
+        \stopformula
+    \stopplaceformula
+
+    Por substituição direta da \in{Equação}[eq:distribution] na \in{Equação}[eq:mean_time] chegariamos a um empasse na resolução da integral, portanto tomamos mão da primitiva de $E (t)$ chamda $\Omega (t)$ na \in{Equação}[eq:omega].
+
+    \startplaceformula[reference=eq:omega]
+        \startformula
+            \startequationsystem[align=2:left]
+                \NC \Omega (t) \NC = \int E (t) \, d t \NR
+                \NC \NC \getbuffer[k] \left( \fraction{\getbuffer[c]}{c} - \fraction{\getbuffer[b]}{b} \right) \NR
+            \stopequationsystem
+        \stopformula
+    \stopplaceformula
+
+    Utilizando integração por partes, encontramos uma integral indefinida que servira de ponto de partida para determinação de $\getbuffer[tm]$, em que $\Omega (t)$ é a primitiva de $E (t)$.
+
+    \startplaceformula[reference=eq:tm_undefined]
+        \startformula
+            \startequationsystem[align=2:left]
+                \NC \int t \Omega' (t) \, d t \NC = \NC t \Omega (t) - \int \Omega (t)\, d t \NR
+                \NC \NC = \NC t \getbuffer[k] \left( \fraction{\getbuffer[c]}{c} - \fraction{\getbuffer[b]}{b} \right) \NR
+                \NC \NC \NC - \getbuffer[k] \left( \fraction{\getbuffer[b]}{b^2} - \fraction{\getbuffer[c]}{c^2} \right) \NR
+                \NC \NC = \NC \getbuffer[k] \left\[ \fraction{\getbuffer[c]}{c} \left( t + \fraction{1}{c} \right) - \fraction{\getbuffer[b]}{b} \left( t + \fraction{1}{b} \right) \right\] \NR
+            \stopequationsystem
+        \stopformula
+    \stopplaceformula
+
+    Note que na \in{Equação}[eq:tm_undefined] integral por partes foi utilizada para resolução de uma integral não trivial se tomasemos outra rota. Aplicando os limites de integração na \in{Equação}[eq:tm_undefined] e substituindo na \in{Equação}[eq:mean_time].
+
+    \startplaceformula[reference=eq:time_defined]
+        \startformula
+            \getbuffer[tm] = \int_0^\infty t \Omega' (t) \, d t = \getbuffer[ki] \left( \fraction{1}{c^2} - \fraction{1}{b^2} \right) \NR
+        \stopformula
+    \stopplaceformula
+
+    O resultado da \in{Equação}[eq:time_defined] serve-se da razão de crescimento de uma função exponencial ser maior que uma função polinomial de primeiro grau, portanto, no infinito a exponencial controla a convergência da função.
+
+    A demonstração completa da determinação da variância é redundante se comparada com a de $\getbuffer[tm]$. Basta tomarmos a definição de variância segundo os princípios dos parâmetros cinéticos na \in{Equação}[eq:variance] e utilizarmos integral por partes duas vezes.
+
+    \startplaceformula[reference=eq:variance_undefined_1]
+        \startformula
+            \startequationsystem[align=2:left]
+                \NC \int (t - \getbuffer[tm])^2 \Omega' (t) \, d t \NC = \NC (t - \getbuffer[tm])^2 \Omega (t) \NR
+                \NC \NC \NC - 2 \int (t - \getbuffer[tm]) \Omega (t)\, d t \NR
+            \stopequationsystem
+        \stopformula
+    \stopplaceformula
+
+    Fragmentando a demonstração para calcular a integral que surgiu no lado direito da igualdade na \in{Equação}[eq:variance_undefined_1], em que $\Zeta (t)$ é a primitiva de $\Omega (t)$.
+
+    \startplaceformula[reference=eq:variance_part_integral]
+        \startformula
+            \startequationsystem[align=2:left]
+                \NC \int \NC (t - \getbuffer[tm]) \Zeta' (t)\, d t \NR
+                \NC = \NC (t - \getbuffer[tm]) \Zeta (t) - \int \Zeta (t) \, d t \NR
+                \NC = \NC (t - \getbuffer[tm]) \getbuffer[k] \left( \fraction{\getbuffer[b]}{b^2} - \fraction{\getbuffer[c]}{c^2} \right) \NR
+                \NC \NC - \getbuffer[k] \left( \fraction{\getbuffer[c]}{c^3} - \fraction{\getbuffer[b]}{b^3} \right) \NR
+                \NC = \NC \getbuffer[k] \left\[ \fraction{\getbuffer[b]}{b^2} \left( t - \getbuffer[tm] + \fraction{1}{b} \right) \right. \NR
+                \NC \NC \left. - \fraction{\getbuffer[c]}{c^2} \left( t - \getbuffer[tm] + \fraction{1}{c} \right) \right\] \NR
+            \stopequationsystem
+        \stopformula
+    \stopplaceformula
+
+    Voltando para \in{Equação}[eq:variance_undefined_1].
+
+    \startplaceformula[reference=eq:variance_undefined_2]
+        \startformula
+            \startequationsystem[align=2:left]
+                \NC \int \NC (t - \getbuffer[tm])^2 \Omega' (t)\, d t \NR
+                \NC = \NC \getbuffer[k] \left\[ \fraction{\getbuffer[c]}{c} \left( (t - \getbuffer[tm])^2 + \fraction{2}{c} \left( t - \getbuffer[tm] + \fraction{1}{c} \right) \right) \right. \NR
+                \NC \NC \left. - \fraction{\getbuffer[b]}{b} \left( (t - \getbuffer[tm])^2 + \fraction{2}{b} \left( t - \getbuffer[tm] + \fraction{1}{b} \right) \right) \right\] \NR
+            \stopequationsystem
+        \stopformula
+    \stopplaceformula
+
+    Aplicando os limites de integração da variância na \in{Equação}[eq:variance_undefined_2] e considerando que essa quando primitiva tende ao infinito os coeficientes tendem a zero, pelos fatores exponenciais que são mais expressivos que os termos quadraticos.
+
+    \startplaceformula[reference:eq:variance_defined]
+        \startformula
+            \sigma^2 = \getbuffer[ki] \left( \fraction{\getbuffer[tm]^2}{c} - \fraction{2 \getbuffer[tm]}{c^2} + \fraction{2}{c^3}
+                                            - \fraction{\getbuffer[tm]^2}{b} + \fraction{2 \getbuffer[tm]}{b^2} - \fraction{2}{b^3} \right)
+        \stopformula
+    \stopplaceformula
+
+    Portanto, tanto $\sigma^2$ quanto $\getbuffer[tm]$ dependem somente do conhecimento dos coeficientes $a$, $b$ e $c$ para serem determinados.
+
+\stopchapter
+

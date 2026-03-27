@@ -1,0 +1,15 @@
+\environment[header]
+
+\definecolumnset[example][n=2, balance=yes]
+\define\DTR{
+    {\bf DTR}
+}
+
+\starttext
+    \startfrontmatter
+        \startcolumnset[example]
+            \input{source/chapter1.tex}
+            \input{source/chapter2.tex}
+        \stopcolumnset
+    \stopfrontmatter
+\stoptext

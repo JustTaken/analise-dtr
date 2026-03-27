@@ -1,0 +1,50 @@
+\startchapter[title={Parâmetros Cinéticos}]
+    O primeiro passo para identificar os parâmetros de interesse para uma \DTR é converter os dados de saida do sistema de medição para concentração, com frequência, converter de corrente para concentração molar, ou de outras, ou para outras unidades. A forma geral de conversão geralmente se dá por uma correlação linear e tem uma forma semelhante a \in{Equação}[eq:calibration].
+
+    \startplaceformula[reference=eq:calibration]
+        \startformula
+            C (t) = a A (t) + b
+        \stopformula
+    \stopplaceformula
+
+    Vale ressaltar que a \in{Equação}[eq:calibration] depende de uma calibração adequada para que sua validade seja confirmada.
+
+    Após a determinação da curva de calibração, temos que encontrar uma função que possa descrever a concentração em termos dos tempos $t$. Para isso utilizamos os dados de concentração $C$ para cada tempo $t$ encontrados na etapa de experimentação e convertidos na etapa de calibração. O ajuste da função da concentração pode ser feita com certa abrangência pela familia de equações descritas na \in{Equação}[eq:concentration_adjust].
+
+    \startplaceformula[reference=eq:concentration_adjust]
+        \startformula
+            C (t) = a \left( e^{-b t} - e^{-c t}\right)
+        \stopformula
+    \stopplaceformula
+
+    Nesta \in{Equação}[eq:concentration_adjust] $a$ tem unidade dimensional da concentração, seja $M$, $mM$, etc. A relevância da \in[eq:concentration_adjust] reside na possibilidade de encontrar coeficientes $a$, $b$ e $c$ tais que a concentração da solução possa ser prevista para qualquer $t$ com erro mínimo. Com essa ideia em mente o próximo passo é determinar os coeficentes para os quais a soma dos erros quadrados das avaliações em todos os tempos $t$ em comparação com os dados experimentais é a menor possível.
+
+    Para a forma apresentada na \in{Equação}[eq:concentration_adjust] métodos diferências de regressão não linear não mostram resultados significativos dados qualquer conjunto de coeficientes iniciais, isto é, métodos como {\it Gauss-Newton} e {\it Steepst-Decendent}, em todas as execuções testadas não convergiram, ou tiveram limitações práticas no seu desenvolvimento.
+
+    Com uma função valida e que represente apropriadamente os dados experimentais pelos quais ela foi gerada, é possível determinar os parâmetros cinéticos desejados da \DTR de forma analítica, pois, todos os parametrôs são encontrados a partir de aplicações lineares em cima da funcão $C (t)$, neste ponto esta é conhecida.
+
+    \startplaceformula[reference={eq:residence_time}]
+        \startformula
+            E (t) = \fraction{C (t)}{\int_0^\infty C (t) \, d t}
+        \stopformula
+    \stopplaceformula
+
+    A \in{Equação}[eq:residence_time] é a definição da distribuição do tempo de residência. Fisicamente representa a fração de fluido que sai do reator no durante o período $dt$ centrado em $t$.
+
+    O que segue imediatamente é a resolução das equações \in{eq:mean_time} e \in{eq:variance}. Ambas envolvem o entendimento do comportamento do fluido em respeito ao tempo, na \in{Equacão}[eq:mean_time] vemos qual o tempo médio de residência do fluido no reator, e na \in{Equação}[eq:variance] mede a variância desse tempo de residência em todo do tempo médio de residência do fluido.
+
+    \startplaceformula[reference={eq:mean_time}]
+        \startformula
+            \bar{t} = \int_0^\infty t E (t) \, d t
+        \stopformula
+    \stopplaceformula
+
+    Ambas as equações \in[eq:mean_time] e \in[eq:variance] são integradas em todo o domínio da função, ou seja, de $0$ (zero) a $\infty$, aproveitando que por definição, uma função que se ajusta aos dados experimentais converge para zero rapidamente (não necessariamente na escala de tempo do experimento, mas em relação ao tempo total disponível para a experimentação - infinito - isso dá espaço para a convergência da integral, já que a função converge para zero antes do infinito.
+
+    \startplaceformula[reference={eq:variance}]
+        \startformula
+            \sigma^2 = \int_0^\infty (t - \bar{t})^2 E (t) \, d t
+        \stopformula
+    \stopplaceformula
+\stopchapter
+
