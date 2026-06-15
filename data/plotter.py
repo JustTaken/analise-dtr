@@ -1,67 +1,41 @@
-import csv
 import matplotlib.pyplot as plt
+import pandas as pd
 from pathlib import Path
 
 AM1 = 165
 NORMAL = 1
 RAW = 0
 
-def convert(n, vec):
-    try:
-        i = float(n)
-        vec.append(i)
-    except:
-        vec.clear()
+def read(path):
+	data = pd.read_csv(path)
+	am1 = data["AM1"]
 
-def finite_difference(vec):
-    diff = []
+	return am1
 
-    for i in range(len(vec)):
-        if i == 0:
-            diff.append(vec[i + 2] - vec[i])
-        elif i + 1 == len(vec):
-            diff.append(vec[i] - vec[i - 2])
-        else:
-            diff.append(vec[i + 1] - vec[i - 1])
+def plot(path):
+	try:
+		y = [i for i in range(10)]#read(path)
+		x = range(len(y))
 
-    return diff
 
-def read(path, col):
-    vec = []
+		fig, ax = plt.subplots(1, 1)
+		ax.scatter(x, y)
+		print("Plot:", path)
+		plt.show()
+		print("Plot End:", path)
 
-    with open(path, newline="") as f:
-        reader = csv.reader(f, delimiter=",")
+	except:
+		print("Failed to open:", path)
 
-        for row in reader:
-            if len(row) < col + 1:
-                vec.clear()
-                continue
+def dir(path):
+	folder = Path(path)
+	cwd = Path(Path.cwd())
 
-            convert(row[col], vec)
+	for file in folder.iterdir():
+		if file.is_file() and file.suffix == ".csv":
+			plot(file)
 
-    return (vec, finite_difference(vec))
+fig, ax = plt.subplots()
+ax.plot(range(10), range(10))
+plt.show()
 
-def plot(path, col):
-    try:
-        (y, diff) = read(path, col)
-        x = range(len(y))
-
-        print("Plot:", path)
-
-        fig, (ax1, ax2) = plt.subplots(2, 1)
-        ax1.scatter(x, y)
-        ax2.scatter(x, diff)
-        plt.show()
-
-    except:
-        print("Failed to open:", path)
-
-def dir(path, col):
-    folder = Path(path)
-    cwd = Path(Path.cwd())
-
-    for file in folder.iterdir():
-        if file.is_file() and file.suffix == ".csv":
-            plot(file, col)
-
-dir("plan", AM1)
