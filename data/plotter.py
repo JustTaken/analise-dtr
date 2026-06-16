@@ -6,13 +6,14 @@ from pathlib import Path
 starts = [ 917, 1801, 2681, 3561, 4437 ]
 
 def read(path):
-	data = pd.read_csv(path)
-	c4 = data["C4"]
+	data = pd.read_csv(path, index_col=False)
+	c4 = data["AI1"]
 
 	return c4
 
 def plot(path):
 	try:
+		print(f"ploting: {path}")
 		y = read(path)
 		x = range(len(y))
 

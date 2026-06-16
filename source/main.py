@@ -5,16 +5,17 @@ import matplotlib.pyplot as plt
 
 A = 1.0
 B = 0.5
-C = 0.2
+C = 0.5
 Delta = 0.5
+ERR = 1000000
 
 def convert_current(in_current):
 	return in_current * 1.4 + 0.5
 
 def load_data(file):
-	data = pd.read_csv(file)
+	data = pd.read_csv(file, index_col=False)
 
-	y = convert_current(data["C4"].values)
+	y = convert_current(data["AI1"].values)
 	return y
 
 def f(p, x):
@@ -48,7 +49,7 @@ def find_min_sse_coeficients(x, y):
 	data_val = data_integral(x, y)
 	base_length = 100
 
-	minimum = 1000000
+	minimum = ERR
 	min_b = B
 	min_c = C
 	min_a = A
@@ -72,6 +73,9 @@ def find_min_sse_coeficients(x, y):
 					min_b = b
 					min_c = c
 					min_a = a
+
+	if minimum >= ERR or min_b == min_c:
+		return Exception("not ideal")
 
 	return minimum, min_a, min_b, min_c
 
@@ -112,20 +116,13 @@ def add_data_to_figure(y, fig, rows, cols, idx):
 	print(f"{idx} := A({rd(a)}), B({rd(b)}), C({rd(c)}), tm({rd(tm)}), var({rd(var)}), n({rd(n)}), resto({rd(r)})")
 
 	ax = fig.add_subplot(rows, cols, idx)
-	ax.scatter(x, y, color='orange', s=10)
-	ax.scatter(x, fit, color='red', s=10)
+	ax.scatter(x, y, color='orange', s=3)
+	ax.scatter(x, fit, color='red', s=3)
 
 def add_path_to_figure(path, fig, rows, cols, idx):
 	y = load_data(path)
 
 	add_data_to_figure(y, fig, rows, cols, idx)
-
-def plot_file(path):
-	fig = plt.figure()
-	add_path_to_figure(path, fig, 1, 1)
-	plt.show()
-
-	return fig
 
 def plot_dir(path, cols):
 	files = os.listdir(path)
@@ -143,25 +140,40 @@ def plot_dir(path, cols):
 
 	return fig
 
-def plot_new_plan():
+def plot_multiple_data(path, s):
 	fig = plt.figure()
-	y = load_data("data/plan/09_06_26_01.csv")
+	y = load_data(path)
+	print(f"ploting: {path}")
 
-	s = [ 917, 1801, 2681, 3561, 4437 ]
-	# s_28_02 = [ 0, 450, 865, 1270, 1680, 2090, 2515, 2930 ]
+	ys = []
+	for i in range(len(s) - 1):
+		ys.append(y[s[i]:s[i + 1]])
 
-	# add_data_to_figure(y[s[0]:s[1]], fig, 1, 1, 1)
+	cols = 2
+	rows = int(np.ceil(len(ys) / cols))
 
-	add_data_to_figure(y[s[0]:s[1]], fig, 2, 2, 1)
-	add_data_to_figure(y[s[1]:s[2]], fig, 2, 2, 2)
-	add_data_to_figure(y[s[2]:s[3]], fig, 2, 2, 3)
-	add_data_to_figure(y[s[3]:s[4]], fig, 2, 2, 4)
+	i = 1
+	for y in ys:
+		try:
+			add_data_to_figure(y, fig, rows, cols, i)
+			i += 1
+		except:
+			continue
 
-	plt.show()
+	if i == 1:
+		print("no data to show")
+	else:
+		plt.show()
 
 	return fig
 
-plot_new_plan()
+# plot_multiple_data("data/plan/28_03_26_02.csv", [ 0, 450, 865, 1270, 1680, 2090, 2515, 2930 ])
+plot_multiple_data("data/plan/09_06_26_01.csv", [ 917, 1801, 2681, 3561, 4437, 5323 ])
+# plot_multiple_data("data/plan/10_06_26_02.csv", [ 878, 1754, 2631, 3523, 4384, 5300 ])
+# plot_multiple_data("data/plan/10_06_26_03.csv", [ 407, 1302, 2172, 3050, 3936, 4806, 5676 ])
+# plot_multiple_data("data/plan/10_06_26_04.csv", [ 1093, 1995, 2898, 3793, 4629, 5432 ])
+# plot_multiple_data("data/plan/11_06_26_06.csv", [ 886, 1770, 2638, 3538, 4398, 5290 ])
+# plot_multiple_data("data/plan/11_06_26_08.csv", [ 941, 1818, 2710, 3578, 4455, 5347 ])
 
 # plot_dir("data/plan/", 2)
 
