@@ -2,27 +2,28 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from pathlib import Path
 
-AM1 = 165
-NORMAL = 1
-RAW = 0
+#starts = [ 450, 865, 1270, 1680, 2090, 2515, 2930 ]
+starts = [ 917, 1801, 2681, 3561, 4437 ]
 
 def read(path):
 	data = pd.read_csv(path)
-	am1 = data["AM1"]
+	c4 = data["C4"]
 
-	return am1
+	return c4
 
 def plot(path):
 	try:
-		y = [i for i in range(10)]#read(path)
+		y = read(path)
 		x = range(len(y))
 
+		i = 0
+		s = len(y)
 
+		# for s in starts:
 		fig, ax = plt.subplots(1, 1)
-		ax.scatter(x, y)
-		print("Plot:", path)
+		ax.scatter(x[i:s], y[i:s], s = 3)
 		plt.show()
-		print("Plot End:", path)
+		# i = s
 
 	except:
 		print("Failed to open:", path)
@@ -35,7 +36,9 @@ def dir(path):
 		if file.is_file() and file.suffix == ".csv":
 			plot(file)
 
-fig, ax = plt.subplots()
-ax.plot(range(10), range(10))
-plt.show()
-
+plot("data/plan/09_06_26_01.csv")
+plot("data/plan/10_06_26_02.csv")
+plot("data/plan/10_06_26_03.csv")
+plot("data/plan/10_06_26_04.csv")
+plot("data/plan/11_06_26_06.csv")
+plot("data/plan/11_06_26_08.csv")
