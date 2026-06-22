@@ -140,9 +140,10 @@ def plot_dir(path, cols):
 
 	return fig
 
-def plot_multiple_data(path, s):
+def get_multiple_data(path, s):
 	fig = plt.figure()
 	y = load_data(path)
+
 	print(f"ploting: {path}")
 
 	ys = []
@@ -161,19 +162,26 @@ def plot_multiple_data(path, s):
 			continue
 
 	if i == 1:
-		print("no data to show")
-	else:
-		plt.show()
+		return Exception("Missing data")
 
 	return fig
 
+def save_multiple_data(path, s):
+	fig = get_multiple_data(path, s)
+	name, extension = os.path.splitext(path)
+	fig.savefig(name + ".png")
+
+def plot_multiple_data(path, s):
+	get_multiple_data(path, s)
+	plt.show()
+
 # plot_multiple_data("data/plan/28_03_26_02.csv", [ 0, 450, 865, 1270, 1680, 2090, 2515, 2930 ])
-plot_multiple_data("data/plan/09_06_26_01.csv", [ 917, 1801, 2681, 3561, 4437, 5323 ])
-# plot_multiple_data("data/plan/10_06_26_02.csv", [ 878, 1754, 2631, 3523, 4384, 5300 ])
-# plot_multiple_data("data/plan/10_06_26_03.csv", [ 407, 1302, 2172, 3050, 3936, 4806, 5676 ])
-# plot_multiple_data("data/plan/10_06_26_04.csv", [ 1093, 1995, 2898, 3793, 4629, 5432 ])
-# plot_multiple_data("data/plan/11_06_26_06.csv", [ 886, 1770, 2638, 3538, 4398, 5290 ])
-# plot_multiple_data("data/plan/11_06_26_08.csv", [ 941, 1818, 2710, 3578, 4455, 5347 ])
+save_multiple_data("data/plan/09_06_26_01.csv", [ 917, 1801, 2681, 3561, 4437, 5323 ])
+save_multiple_data("data/plan/10_06_26_02.csv", [ 878, 1754, 2631, 3523, 4384, 5300 ])
+save_multiple_data("data/plan/10_06_26_03.csv", [ 407, 1302, 2172, 3050, 3936, 4806, 5676 ])
+save_multiple_data("data/plan/10_06_26_04.csv", [ 1093, 1995, 2898, 3793, 4629, 5432 ])
+save_multiple_data("data/plan/11_06_26_06.csv", [ 886, 1770, 2638, 3538, 4398, 5290 ])
+save_multiple_data("data/plan/11_06_26_08.csv", [ 941, 1818, 2710, 3578, 4455, 5347 ])
 
 # plot_dir("data/plan/", 2)
 
