@@ -20,6 +20,8 @@ def plot(path):
 		i = 0
 		s = len(y)
 
+		print(y)
+
 		# for s in starts:
 		fig, ax = plt.subplots(1, 1)
 		ax.scatter(x[i:s], y[i:s], s = 3)
