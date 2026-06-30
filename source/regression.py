@@ -2,7 +2,7 @@ import numpy as np
 from scipy.special import gammainc, gamma
 from scipy.integrate import quad, trapezoid
 
-ERR = 10000000
+ERR = 100000000
 BASE_LENGTH = 1000
 
 class CustomCurve:
@@ -19,7 +19,7 @@ class CustomCurve:
 		self.err = ERR
 
 		n_vec = np.linspace(1.0, 2.0, 101)
-		t_vec = np.linspace(50, 650, 601)
+		t_vec = np.linspace(100, 400, 301)
 
 		for n in n_vec:
 			for t in t_vec:
@@ -44,8 +44,9 @@ class CustomCurve:
 		return self.on(self.a, self.n, self.t, x)
 
 	def rest(self, a, n, t, x, y):
+		z = (x[len(x) - 1] - np.array(x)) / 50
 		y_hat = self.on(a, n, t, x)
-		return np.sum((y - y_hat) ** 2)
+		return np.sum(((y - y_hat) * z) ** 2)
 
 	def values(self):
 		return self.t, 1, self.n

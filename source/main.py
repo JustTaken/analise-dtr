@@ -30,8 +30,8 @@ class Render:
 			y_hat = data.fit[i]
 
 			ax = fig.add_subplot(rows, self.cols, i + 1)
-			ax.scatter(x, y, color='red')
-			ax.scatter(x, y_hat, color='blue')
+			ax.scatter(x, y, color='red', s = 3)
+			ax.scatter(x, y_hat, color='blue', s = 3)
 
 			tm = data.tm[i]
 			n = data.n[i]
@@ -57,24 +57,24 @@ class Data:
 			self.add_range(init_v[i], init_v[i + 1])
 
 	def add_range(self, start, end):
-		y = self.y[start:end]
-		length = len(y)
-		y = y - np.mean(y[length - int(length * 0.01):length - 1])
+		y_full = self.y[start:end]
+		length = len(y_full)
+		y_full = y_full - np.mean(y_full[length - int(length * 0.01):length - 1])
+		x_full = range(0, length)
 
-		#y = y[0:int(len(y)*0.2)]
-		#length = len(y)
+		y = y_full[0:int(length*0.5)]
+		length = len(y)
 		x = range(0, length)
 
 		fit = regression.CustomCurve(x, y)
-		self.output.append(y)
+		self.output.append(y_full)
 
 		tm, var, n = fit.values()
 
 		self.tm.append(rd(tm))
 		self.var.append(rd(var))
 		self.n.append(rd(n))
-		self.fit.append(fit.fit(x))
-
+		self.fit.append(fit.fit(x_full))
 
 #n = 1.5
 #t = 100
@@ -87,8 +87,12 @@ class Data:
 
 converter = Converter(1.5, 0.5)
 render = Render(2)
-#render.plot(Data("testing.csv", "AM1", [ 0, 1000 ], converter))
-render.plot(Data("data/plan/09_06_26_01.csv", "AM1", [ 933, 1815, 2693, 3571, 4448, 5323 ], converter))
+# render.plot(Data("data/plan/09_06_26_01.csv", "AM1", [ 933, 1815, 2693, 3571, 4448, 5323 ], converter))
+# render.plot(Data("data/plan/10_06_26_02.csv", "AM1", [ 878, 1754, 2631, 3523, 4384, 5300 ], converter))
+# render.plot(Data("data/plan/10_06_26_03.csv", "AM1", [ 407, 1302, 2172, 3050, 3936, 4806, 5676 ], converter))
+# render.plot(Data("data/plan/10_06_26_04.csv", "AM1", [ 1152, 2025, 2903, 3793, 4669, 5432 ], converter))
+# render.plot(Data("data/plan/11_06_26_06.csv", "AM1", [ 917, 1791, 2668, 3549, 4431, 5290 ], converter))
+render.plot(Data("data/plan/11_06_26_08.csv", "AM1", [ 941, 1818, 2710, 3578, 4463, 5347 ], converter))
 
 #########################################################################################################
 
