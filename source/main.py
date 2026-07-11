@@ -40,8 +40,18 @@ class Render:
 
 		plt.show()
 
+	def save_data(self, data, file):
+	   data_frame = pd.DataFrame({
+	       'n': data.n,
+	       'tm': data.tm,
+	       'var': data.tm,	       
+	   })
+
+	   data_frame.to_csv(file, index=False)
+
 class Data:
 	def __init__(self, path, col_name, init_v, converter):
+		print(path)
 		data = pd.read_csv(path, index_col=False)
 
 		y = converter.convert(data[col_name].values)
@@ -76,23 +86,15 @@ class Data:
 		self.n.append(rd(n))
 		self.fit.append(fit.fit(x_full))
 
-#n = 1.5
-#t = 100
-#a = 1000
-#data = pd.DataFrame({
-#	"AM1": [a * (x / t) ** (n - 1) * n ** n * np.exp(-(x * n) / t) for x in range(0, 1000)]
-#})
-
-#data.to_csv("testing.csv")
 
 converter = Converter(1.5, 0.5)
 render = Render(2)
-# render.plot(Data("data/plan/09_06_26_01.csv", "AM1", [ 933, 1815, 2693, 3571, 4448, 5323 ], converter))
-# render.plot(Data("data/plan/10_06_26_02.csv", "AM1", [ 878, 1754, 2631, 3523, 4384, 5300 ], converter))
-# render.plot(Data("data/plan/10_06_26_03.csv", "AM1", [ 407, 1302, 2172, 3050, 3936, 4806, 5676 ], converter))
-# render.plot(Data("data/plan/10_06_26_04.csv", "AM1", [ 1152, 2025, 2903, 3793, 4669, 5432 ], converter))
-# render.plot(Data("data/plan/11_06_26_06.csv", "AM1", [ 917, 1791, 2668, 3549, 4431, 5290 ], converter))
-render.plot(Data("data/plan/11_06_26_08.csv", "AM1", [ 941, 1818, 2710, 3578, 4463, 5347 ], converter))
+render.save_data(Data("data/plan_plate/09_06_26_01.csv", "AM1", [ 933, 1815, 2693, 3571, 4448, 5323 ], converter), "data/plan_plate/01.csv")
+render.save_data(Data("data/plan_plate/10_06_26_02.csv", "AM1", [ 878, 1754, 2631, 3523, 4384, 5300 ], converter), "data/plan_plate/02.csv")
+render.save_data(Data("data/plan_plate/10_06_26_03.csv", "AM1", [ 407, 1302, 2172, 3050, 3936, 4806, 5676 ], converter), "data/plan_plate/03.csv")
+render.save_data(Data("data/plan_plate/10_06_26_04.csv", "AM1", [ 1152, 2025, 2903, 3793, 4669, 5432 ], converter), "data/plan_plate/04.csv")
+render.save_data(Data("data/plan_plate/11_06_26_06.csv", "AM1", [ 917, 1791, 2668, 3549, 4431, 5290 ], converter), "data/plan_plate/06.csv")
+render.save_data(Data("data/plan_plate/11_06_26_08.csv", "AM1", [ 941, 1818, 2710, 3578, 4463, 5347 ], converter), "data/plan_plate/08.csv")
 
 #########################################################################################################
 
@@ -147,4 +149,14 @@ render.plot(Data("data/plan/11_06_26_08.csv", "AM1", [ 941, 1818, 2710, 3578, 44
 #save_multiple_data("data/plan/10_06_26_04.csv", [ 1093, 1995, 2898, 3793, 4629, 5432 ])
 #save_multiple_data("data/plan/11_06_26_06.csv", [ 886, 1770, 2638, 3538, 4398, 5290 ])
 #save_multiple_data("data/plan/11_06_26_08.csv", [ 941, 1818, 2710, 3578, 4455, 5347 ])
+
+
+#n = 1.5
+#t = 100
+#a = 1000
+#data = pd.DataFrame({
+#	"AM1": [a * (x / t) ** (n - 1) * n ** n * np.exp(-(x * n) / t) for x in range(0, 1000)]
+#})
+
+#data.to_csv("testing.csv")
 
