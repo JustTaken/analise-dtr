@@ -7,7 +7,6 @@ BASE_LENGTH = 1000
 
 class CustomCurve:
 	def __init__(self, x, y):
-		#data_integral = numeric_integral(x, y)
 		data_integral = trapezoid(y, x)
 
 		start = x[0]
@@ -19,7 +18,7 @@ class CustomCurve:
 		self.err = ERR
 
 		n_vec = np.linspace(1.0, 2.0, 101)
-		t_vec = np.linspace(100, 400, 301)
+		t_vec = np.linspace(50, 400, 351)
 
 		for n in n_vec:
 			for t in t_vec:
