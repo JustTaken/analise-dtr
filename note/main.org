@@ -1,0 +1,41 @@
+* Results
+Plate 01 - 3 : N = 1.17 : Tm = 296
+Down 01 - 4 : N = 1.39 : Tm = 205
+Up 01 - 1: N = 1.36 : Tm = 188
+
+Plate 02 - 2 : N = 1.42 : Tm = 269
+Down 02 - 3 : N = 1.28 : Tm = 218
+Up 02 - 4 : N = 1.18 : Tm = 221
+
+Plate 03 - 2 : N = 1.32 : Tm = 282
+Down 03 - 5 : N = 1.34 : Tm = 205
+Up 03 - 1 : N = 1.13 : Tm = 297
+
+Plate 04 - 2 : N = 1.24 : Tm = 334
+Down 04 - 2 : N = 1.37 : Tm = 201
+Up 04 - 2 : N = 133 : Tm = 184
+
+Plate 06 - 2 : N = 1.3 : Tm = 366
+Down 06 - 2 : N = 1.31 : Tm = 388
+Up 06 - 2 : N = 1.49 : Tm = 258
+
+Plate 08 - 1 : N = 1.3 : Tm = 270
+Down 08 - 3 : N = 1.39 : Tm = 292
+Up 08 - 5 : N = 1.22 : Tm = 294
+
+Plate 10 - 2 : N = 1.24 : Tm = 94
+Down 10 - 3 : N = 1.5 : Tm = 214
+Up 10 - 3 : N = 1.24 : Tm = 264
+
+Plate 13 - 1 : N = 1.11 : Tm = 88
+Down 13 - 4 : N = 1.3 : Tm = 291
+Up 13 - 3 : N = 1.41 : Tm = 296
+
+Plate 14 - 2 : N = 1.45 : Tm = 61
+Down 14 - 4 : N = 1.18 : Tm = 255
+Up 14 - 2 : N = 1.16 : Tm = 321
+
+* Discussion
+ - Present E(t) and E(theta) and show the difference in peak, distribution width and tail
+ - Geometry influency in the hydrodynamic, For the element with the most restriction, there it is expected to have more aceleration in the hole, greater steer, greater radial mixing and greater pressure difference. For the less restricted elements there is less pertubation and flux closer to tubular.
+ - N is the inverse of the variance, that is, the greater the variancy, the less N and smaller the axial dispersion.

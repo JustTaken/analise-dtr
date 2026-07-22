@@ -1,0 +1,380 @@
+\documentclass[a4paper,12pt,fleqn]{article}
+
+% ============================================================
+% 1. PACOTES ESSENCIAIS (CODIFICAÇÃO E IDIOMA)
+% ============================================================
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[brazilian]{babel} % Garante "Figura" e "Tabela" e hifenização PT-BR
+
+% ============================================================
+% 2. CONFIGURAÇÕES DE PÁGINA (GEOMETRIA E LAYOUT)
+% ============================================================
+%\usepackage{geometry}
+%\geometry{
+%	top=2.0cm, 
+%	bottom=2.0cm, 
+%	left=3cm, 
+%	right=3cm, 
+%	footskip=0.3cm % Distância do texto até o rodapé
+%}
+
+\usepackage{geometry}
+\geometry{
+	top=2.0cm, 
+	bottom=2.0cm, 
+	left=3cm, 
+	right=3cm, 
+	headheight=15pt, % Ajustado para evitar erro
+	footskip=0.8cm   % Ajustado para evitar erro
+}
+
+\usepackage{setspace}
+\setstretch{1.0}        % Espaçamento entre linhas 1.0
+\singlespacing          % Garante espaçamento simples
+
+\usepackage{multicol}   % Suporte a duas colunas
+\usepackage{float}      % Controle de posicionamento [H]
+
+\setlength{\columnsep}{0.8cm}
+
+% ============================================================
+% 3. FONTES E MATEMÁTICA
+% ============================================================
+\usepackage{newtxtext}  % Fonte similar a Times New Roman
+\usepackage{newtxmath}  % Fonte matemática compatível
+\usepackage{amsmath}    % Comandos matemáticos avançados
+\setlength{\mathindent}{0pt} % Equações alinhadas à esquerda (fleqn)
+
+% ============================================================
+% 4. CORES E ELEMENTOS GRÁFICOS
+% ============================================================
+\usepackage{xcolor}
+\usepackage[table]{xcolor} % Cores em tabelas
+\definecolor{verm}{RGB}{178, 34, 34} % Cor padrão ENEMP
+
+\usepackage{graphicx}
+\usepackage{eso-pic}    % Inserção de elementos no background (header)
+
+% ============================================================
+% 5. FORMATAÇÃO DE TABELAS
+% ============================================================
+\usepackage{booktabs}   % Réguas horizontais profissionais (\toprule, etc)
+\usepackage{multirow}   % Mesclagem de linhas
+\usepackage{makecell}   % Quebra de linha dentro de células
+\usepackage{tabularx}   % Tabelas com largura ajustável
+
+% ============================================================
+% 6. CONFIGURAÇÃO DE LEGENDAS (CAPTION)
+% ============================================================
+\usepackage{caption}
+
+% Configuração para Figuras
+\captionsetup[figure]{
+	labelsep=period, 
+	justification=centering,
+	font={normalsize}, 
+	skip=10pt 
+}
+
+% Configuração para Tabelas
+\captionsetup[table]{
+	font={normalsize}, 
+	labelsep=endash,
+	justification=centering,
+	skip=10pt
+	%\renewcommand{\arraystretch}{1.5}
+}
+
+% ============================================================
+% 7. FORMATAÇÃO DE TEXTO E PARÁGRAFOS
+% ============================================================
+\usepackage{ragged2e}   % Alinhamento justificado refinado
+\usepackage{indentfirst} % Indenta o primeiro parágrafo das seções
+\setlength{\parindent}{1.0cm}
+
+\usepackage[none]{hyphenat} % Remove hifenização automática
+
+% Controle de linhas órfãs e viúvas
+\clubpenalty=10000
+\widowpenalty=10000
+\displaywidowpenalty=10000
+\brokenpenalty=10000
+\predisplaypenalty=10000
+\postdisplaypenalty=10000
+
+% ============================================================
+% 8. TÍTULOS E LISTAS
+% ============================================================
+\usepackage{titlesec}
+\titleformat{\section}{\normalfont\fontsize{12}{14}\bfseries}{\thesection}{1 em}{}
+\titleformat{\subsection}{\normalfont\fontsize{12}{14}\bfseries}{\thesubsection}{1 em}{}
+\titleformat{\subsubsection}{\normalfont\fontsize{12}{14}\bfseries\itshape}{\thesubsubsection}{1 em}{}
+\setcounter{secnumdepth}{2}
+
+\titlespacing*{\section}{0pt}{12pt}{0pt}
+\titlespacing*{\subsection}{0pt}{12pt}{0pt}
+\titlespacing*{\subsubsection}{0pt}{12pt}{0pt}
+
+\usepackage{enumitem}
+\setlist{
+	noitemsep,     % Remove espaço entre itens
+	topsep=0pt,    % Remove espaço antes da lista
+	partopsep=0pt, 
+	parsep=0pt     % Remove espaço entre parágrafos no item
+}
+
+% ============================================================
+% 9. REFERÊNCIAS BIBLIOGRÁFICAS
+% ============================================================
+%\usepackage[alf, abnt-emphasize=bf, abnt-title-command=yes]{abntex2cite}
+
+% ============================================================
+% 10. CABEÇALHOS E RODAPÉS (FANCYHDR)
+% ============================================================
+\usepackage{fancyhdr}
+
+% Estilo padrão para todas as páginas (exceto a primeira)
+\pagestyle{fancy}
+\fancyhf{} 
+\renewcommand{\headrulewidth}{0.0pt} 
+\fancyhead[C]{\fontsize{12}{14}\selectfont \color{verm} XLII Congresso Brasileiro de Sistemas Particulados (ENEMP)}
+\fancyfoot[R]{\thepage}
+
+% Estilo específico para a primeira página
+\fancypagestyle{primeirapagina}{
+	\fancyhf{}
+	\renewcommand{\headrulewidth}{0pt}
+	\fancyfoot[L]{%
+		\fontsize{8}{9.6}\selectfont \color{verm}%
+		Anais do ENEMP © 2026 ENEMP. \\%
+		Esta é uma obra licenciada sob os termos da Licença CC BY-NC-SA 4.0.%
+	}
+	\fancyfoot[R]{\thepage}
+}
+
+% Inserção da imagem de cabeçalho na primeira página
+\AddToShipoutPictureBG*{
+	\AtPageUpperLeft{%
+		\put(0,0){%
+			\makebox(0,0)[lt]{%
+				\includegraphics[width=21cm, height=4.86cm, keepaspectratio=false]{figuras/header.jpg}%
+			}%
+		}%
+	}
+}
+
+% ============================================================
+% INÍCIO DO DOCUMENTO
+% ============================================================
+\begin{document}
+	\nocite{sparrow1980, wei2024, barros2015, ratkowsky1983, fernanda2022, coraucci2016}
+	%\pagestyle{empty}
+	% Espaço ajustado para o título começar após a imagem de 4,86cm
+	\vspace*{2.5cm} 
+
+	% TÍTULO DO TRABALHO: Letras maiúsculas, negrito, centralizado, fonte 14
+	\begin{center}
+		{\bfseries\fontsize{14}{16}\selectfont TÍTULO DO TRABALHO}
+	\end{center}
+
+	% AUTORES: Inserir nomes completos. Máximo de 8 autores. Centralizado. Fonte 12.
+	% Se for Student Contest, o candidato deve ser o primeiro autor.
+	\begin{center}
+		{\fontsize{12}{14}\selectfont Nome Completo Autor 1$^{1}$, Nome Completo Autor 2$^{2}$, Nome Completo Autor 3$^{3*}$}
+		
+		\vspace{0.3cm}
+
+		% FILIAÇÃO: Nome completo da instituição com endereço. Centralizado. Fonte 10.
+		{\fontsize{10}{12}\selectfont
+			$^{1}$Universidade/Instituição/Empresa, endereço\\
+			$^{2}$Universidade/Instituição/Empresa, endereço\\
+			$^{3}$Universidade/Instituição/Empresa, endereço\\
+			*e-mail@e-mail.com.br % Asterisco para indicar autor de correspondência
+		}
+	\end{center}
+
+	\begin{justify}
+		{\fontsize{12}{14}\selectfont
+			\textbf{Resumo:} O resumo deve conter entre 100 e 200 palavras, abrangendo todos os pontos do trabalho, como motivação, objetivo, métodos adotados, principais resultados e conclusão. As palavras-chave devem seguir imediatamente abaixo do resumo, sendo de 3 a 5 palavras- -chave em letras minúsculas, separadas por ponto e vírgula e finalizadas por ponto. O título deve ser em negrito, com letras maiúsculas, centralizado, não excedendo 3 linhas. O nome dos autores deve ser escrito por extenso, separado por vírgula. Utilize um espaçamento de 12 pontos entre o título do trabalho e os autores. Os demais autores seguirão na sequência, sempre separados por ponto e vírgula. As afiliações devem ser indicadas por números arábicos sobrescritos ao final de cada autor, e cada afiliação correspondente deve ser escrita por extenso após a lista de autores. Utilize um espaçamento de 12 pontos entre os autores e as afiliações, e entre as afiliações e o resumo. O conteúdo referente a título, autores, resumo e abstract não pode ultrapassar uma página. \textbf{Todos os trabalhos submetidos ao student contest devem estar em inglês, exceto o resumo em português na primeira página. }
+
+			\noindent
+			\textbf{Palavras-chave:} primeiro termo; segundo termo; terceiro termo.}
+	\end{justify}
+
+	% TÍTULO DO TRABALHO EM INGLÊS: Letras maiúsculas, negrito, centralizado, fonte 14
+	\begin{center}
+		{\bfseries\fontsize{14}{16}\selectfont [TITLE IN ENGLISH] MODELO E INSTRUÇÕES PARA A ELABORAÇÃO DE TRABALHOS A SEREM SUBMETIDOS AO XLII CONGRESSO BRASILEIRO DE SISTEMAS PARTICULADOS}
+	\end{center}
+
+	% Abstract
+	\begin{justify}
+		{\fontsize{12}{14}\selectfont
+			\textbf{Abstract:} As traduções para o inglês do título, do resumo (Abstract) e das palavras-chave (Keywords) devem ser apresentadas logo após o resumo. O trabalho deverá ter no mínimo 6 páginas e no máximo 10 páginas, não excedendo 2 MB em tamanho. O trabalho deve ser inédito, podendo ser do tipo original ou de revisão, e não deve ter sido apresentado anteriormente ou estar em processo de avaliação em outro evento, periódico ou qualquer outro meio de publicação. Será aceito um máximo de 08 autores por trabalho submetido, e não serão permitidas alterações na autoria (inclusões ou exclusões de autores) após a submissão efetiva. São aceitos trabalho nos idiomas português, espanhol ou inglês. Os autores são responsáveis pela autoria integral do texto, sem cópia, plágio ou equivalentes. O uso de inteligência artificial deve seguir a Política de Integridade na Atividade Científica do CNPq, de acordo com a portaria 2664/2026. O autor responsável pela submissão assume a responsabilidade de garantir que todos os autores estejam cientes do conteúdo do trabalho e de sua publicação na forma online em acesso aberto através dos anais do ENEMP.
+
+			% Keywords
+			\noindent
+			\textbf{Keywords:} first keyword; second keyword; third keyword.
+		}
+	\end{justify}
+
+	\thispagestyle{primeirapagina} %Rodapé
+
+	\newpage %Nova pagina
+	
+	% =========================
+	% INÍCIO DAS DUAS COLUNAS
+	% =========================
+
+	\newgeometry{
+		top=2.0cm, 
+		bottom=2.0cm, 
+		left=2.0cm, 
+		right=2.0cm, 
+		footskip=1.0cm
+	}
+
+	\begin{multicols}{2}
+
+		% =========================
+		\section{Introdução}
+		% Apresentar motivação, objetivo e contexto
+
+		O documento deve apresentar páginas em tamanho A4 (21 cm x 29,7 cm) sendo que a primeira página, contendo o título, autores, instituição e o resumo, deve ser configurada em uma única coluna e demais páginas em duas colunas. Utilize a fonte Times New Roman tamanho 12, com espaçamento simples, para todo o trabalho. A formatação deste modelo deverá ser seguida em todas suas características. As margens, cabeçalho, rodapé e numeração das páginas já estão configuradas neste arquivo modelo e não poderão ser alteradas. Além disso, não devem ser utilizadas notas de rodapé nas páginas. A compatibilidade deste modelo foi feita para o editor de texto LATEX. O texto dos parágrafos deve ser digitado em estilo “normal”, usando espaçamento entre linhas simples e alinhamento justificado. A primeira linha de cada parágrafo deve ser iniciada com a tabulação de 1 cm a partir da margem esquerda e não se deve deixar espaço entre dois parágrafos subsequentes. 
+
+		% =========================
+		\section{Título de primeira ordem}
+		% Texto normal, parágrafo com recuo de 1 cm
+		O título acima desta linha representa um título de primeira ordem, o qual deve ser alinhado à esquerda, em negrito, numerados com algarismos arábicos (1, 2, 3, etc.) e somente com a primeira inicial maiúscula. Não coloque ponto final nos títulos. Cada título de primeira ordem deve ser separado de um espaço do texto anterior e posterior. Atente-se para não deixar títulos sem texto ao final de alguma página. Os autores devem estar cientes que o trabalho será publicado exatamente como for entregue, ou seja, os avaliadores não terão autonomia para alterar ou corrigir a formatação do documento, motivo pelo qual os documentos mal formatados não serão aceitos. 
+
+		% =========================
+		\subsection{Título de segunda ordem}
+		Os títulos de segunda ordem devem ser alinhados à esquerda, em negrito, numerados com algarismos arábicos em subtítulos (1.1, 1.2, 1.3, etc.), e somente com a primeira letra da primeira palavra em maiúsculo (não coloque primeira letra de cada palavra em maiúsculo). Deve existir um espaço separando o título do texto anterior. 
+
+		% =========================
+		\subsubsection{Título de terceira ordem}
+		Os títulos de terceira ordem devem ser alinhados à esquerda, em negrito e itálico, e somente com a primeira letra da primeira palavra em maiúsculo (não coloque primeira letra de cada palavra em maiúsculo). Os títulos de terceira ordem não devem ser numerados e são a última subdivisão das seções do texto. Não use títulos de quarta ordem.
+
+		% =========================
+		\section{Citações}
+		Evite citações diretas nas quais o trecho é transcrito exatamente como foi escrito pelo autor e prefira citações indiretas, nas quais a ideia é expressa com base no texto consultado. As citações devem seguir o sistema de chamada autor-data, com a seguinte padronização, dependendo do contexto:
+
+		\begin{itemize}
+			\item Quando a citação estiver entre parênteses, deve-se indicar o autor e o ano separados por vírgula. Exemplo: “... a literatura apresenta estudos de cinética de secagem (Fiorentin, 1995)...”;
+			\item Quando a citação estiver incluída na frase, o ano deve ser indicado entre parênteses. Exemplo: “... Fiorentin (1995) estudou a cinética da secagem...” 
+		\end{itemize}
+
+		Quando houver quatro ou mais autores, mencione apenas o primeiro autor, omitindo os nomes dos últimos autores e acrescentando a expressão “\textit{et al.}” em itálico. Na referência (ao final do trabalho), entretanto, todos os autores devem ser listados.
+
+		% =========================
+		\section{Figuras e tabelas}
+		Fotos, gráficos, diagramas e outras ilustrações devem ser designadas como “figuras” e quadros e tabelas devem ser designadas como “tabela”. As figuras incluídas no trabalho devem ser de boa qualidade e resolução que permita a legibilidade a adequada. Estes elementos devem vir no corpo do trabalho em uma coluna, caso isto não seja possível, podem ser estendidas pelas duas colunas. Deve-se evitar quebra de tabelas deixando-as por inteiro em uma única página.
+
+		Todas as figuras e tabelas devem ter um título e ser numerada em algarismos arábicos. Os títulos das figuras devem ser centralizados contendo a palavra designativa (Figura ou Tabela), seguida de seu número de ordem de ocorrência no texto, em tamanho 12. Os títulos de figuras devem vir na parte inferior delas enquanto os títulos de tabelas devem vir acima. Se a figura ou tabela não for de autoria própria, deve-se indicar a fonte logo após o título. É imprescindível que os autores confiram a disposição de figuras e tabelas sempre mantendo acompanhadas de seus títulos, evitando a separação entre páginas.  
+
+		Todas as figuras e tabelas devem ser mencionadas no texto e inseridas o mais próximas possível das menções sobre elas, sendo que a primeira menção deve ser obrigatoriamente anterior ao aparecimento delas. Evite o uso de "figura abaixo", para mencioná-las, utilize a palavra designativa com a primeira letra em maiúsculo, seguida de seu número de ordem. Observe o exemplo conforme Figura 1. 
+
+		% Figuras: legenda abaixo
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=\columnwidth]{figuras/figura.png}
+			\caption{Descrição da figura.}
+		\end{figure}
+
+		Sobre a formatação de tabelas, deve-se seguir o modelo da Tabela 1, com três traços horizontais: no topo, após cabeçalho e no rodapé. Todas as tabelas devem ser digitadas utilizando o recurso de tabela do editor de texto, ou seja, não são aceitas tabelas em formato de imagem. Na apresentação de dados numéricos é obrigatória a indicação da unidade de medida no cabeçalho e entre parêntesis. 
+
+		% Tabelas: legenda acima
+		\begin{table}[H]
+			\centering
+			% Texto da tabela em tamanho 10 conforme solicitado
+			\fontsize{10}{12}\selectfont 
+			\caption{Tabela modelo para ser usada no trabalho (ENEMP, 2026).}
+			\label{tab:modelo_final}
+
+			% @{} remove os espaços nas pontas para alinhar perfeitamente com as margens
+			% Use X, c, r ou l para adicionar colunas na tabela
+			\begin{tabularx}{\columnwidth}{@{} >{\raggedright\arraybackslash}X c c c @{}}
+				\hline
+				\addlinespace[0.2cm] % Espaço acima do texto do cabeçalho
+				\textbf{Meio poroso} & \textbf{\makecell{Densidade \\ (g/cm$^3$)}} & \textbf{\makecell{Porosidade \\ (\%)}} & \textbf{\makecell{Diâmetro \\ médio (cm)}} \\
+				\addlinespace[0.1cm] % Espaço acima do texto do cabeçalho
+				\hline\addlinespace[0.2cm] % Espaço acima do texto
+				\textbf{Areia} & 2,65 & 35 & 0,22 \\
+				\textbf{Carvão ativado} & 0,98 & 41 & 0,01 \\
+				\hline
+			\end{tabularx}
+		\end{table}
+		
+		% =========================
+		\section{Equações}
+
+		As equações devem ser escritas alinhadas à esquerda e acompanhadas de seu número de ordem de ocorrência no texto entre parênteses, alinhados à margem direita, conforme Equação 1. Elas devem ser inseridas utilizando a ferramenta de equações do editor de texto, não sendo aceitas imagens. Os símbolos utilizados nas equações devem ser definidos quando mencionado pela primeira vez no texto. Todos os dados do trabalho, incluindo os presentes em tabelas e figuras, devem estar em unidades do Sistema Internacional (SI).
+		% Equação alinhada à esquerda com numeração
+		\begin{equation}
+			\frac{\partial C}{\partial t} = \dfrac{D}{r}\dfrac{\partial D}{\partial r}+ \frac{\partial^2 C}{\partial t^2},
+		\end{equation}
+
+		% Definir símbolos na primeira ocorrência
+
+		\noindent
+		onde:\\
+		\begin{tabularx}{\columnwidth}{@{} l X r @{}}
+			$C$ & concentração & [mol/m$^3$] \\
+			$D$ & coeficiente de difusão & [m$^2$/s] \\
+			$r$ & distância radial & [m] \\
+			$t$ & tempo & [s] \\
+		\end{tabularx}
+
+		% =========================
+		\section{Conclusão}
+		% Síntese sem introduzir novas ideias
+		Todos os trabalhos devem obrigatoriamente conter os títulos de “Introdução” e “Conclusão”, sendo títulos de primeira ordem e sem subdivisões internas. Na seção de “Introdução”, espera-se que os autores apresentem a motivação para a realização do trabalho, o objetivo geral e outros elementos essenciais para contextualizar o tema, fazendo uso de citações da literatura científica. Na seção de “Conclusão”, deve-se apresentar de forma sucinta a contribuição do trabalho, sem introduzir novas ideias ou citações. Quanto aos demais títulos que compõem a seção de desenvolvimento do trabalho, a comissão organizadora não estabelece uma padronização, concedendo aos autores flexibilidade para nomeá-los conforme considerem adequado para o trabalho.
+
+		% =========================
+		\section*{Agradecimentos}
+		% Opcional
+		No trabalho poderão ser incluídos reconhecimentos de apoios recebidos de pessoas físicas e instituições, seção localizada após a “Conclusão”. A seção de agradecimentos é opcional e não necessita de numeração.
+		
+
+	% ============================================================
+	% REFERÊNCIAS
+	% ============================================================
+	\section*{Referências}
+	
+	Todas as referências citadas no decorrer do texto devem ser apresentadas em ordem alfabética. Elas devem vir em fonte tamanho 10, com espaçamento entre linhas simples e com 10 pontos depois de cada referência. Para revistas que atribuem aos artigos um número de identificação, conhecido como eLocators, insira este número de identificação do artigo no local onde normalmente estaria a paginação. 
+
+	Seguem exemplos de referências de artigo com paginação, artigo com eLocator, livro, dissertação, trabalho em evento e patente.
+	
+	\begingroup
+	\renewcommand{\section}[2]{} 
+	
+	\makeatletter
+	% MÁGICA QUE APAGA O NOME DUPLICADO (Esconde o rótulo)
+	\renewcommand{\@biblabel}[1]{}
+	
+	% REESCREVE A BIBLIOGRAFIA PARA ZERAR QUALQUER RECUO
+	\renewenvironment{thebibliography}[1]{%
+		\list{}{%
+			\setlength{\leftmargin}{0pt}  % Zera a margem esquerda de todas as linhas
+			\setlength{\itemindent}{0pt}  % Zera o recuo da primeira linha
+			\setlength{\labelwidth}{0pt}  % Zera o espaço oculto do rótulo
+			\setlength{\labelsep}{0pt}    % Zera a separação do rótulo
+			\setlength{\itemsep}{10pt}    % Mantém os 10pt entre cada referência
+			\setlength{\parsep}{0pt}
+		}%
+		\sloppy      % Força justificação sem vazar a margem
+		\justifying  % Garante o alinhamento justificado
+	}{%
+		\endlist
+	}
+	\makeatother
+	
+	\fontsize{10}{12}\selectfont
+
+	% Usa apalike
+	\bibliographystyle{apalike}
+	\bibliography{mybibfile}
+	\endgroup
+
+	\end{multicols}
+\end{document}
