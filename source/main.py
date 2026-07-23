@@ -3,6 +3,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import regression
+import scipy as sp
 
 class Converter:
 	def __init__(self, a, b):
@@ -16,30 +17,54 @@ class Converter:
 def rd(x):
 	return round(x, 2)
 
+def calculate_E(y, t):
+	A = sp.integrate.trapezoid(y, t)
+	E = y / A
+	return E
+
+def calculate_tau(E, t):
+	tau = sp.integrate.trapezoid(t * E, t)
+	return tau
+
+def calculate_theta(t, tau):
+	return t / tau
+
+def calculate_Etheta(E, tau):
+	return tau * E
+
+def calculate_var(E, t, tau):
+	t = np.array(t)
+	return sp.integrate.trapezoid(t**2 * E) - tau**2
+
+def calculate_n(tau, var):
+	return tau**2 / var
+
 def remove_trail(y):
 	length = len(y)
-	#y_full = y
-	C = y - np.mean(y[length - int(length * 0.01):length - 1])
+	return y - np.mean(y[length - int(length * 0.01):length - 1])
+
+def transform_curve(y):
+	C = remove_tail(y)
 	t = range(0, length)
 
-	A = np.trapezoid(C, t)
-	E = C / A
-	tau = np.trapezoid(t * E, t)
+	E = calculate_E(C, t)
+	tau = calculate_tau(E, t)
+	theta = calculate_theta(t, tau)
+	Etheta = calculate_Etheta(E, tau)
 
-	theta = t / tau
-	Etheta = tau * E
+	#theta = t / tau
+	#Etheta = tau * E
 
 	return t, theta, Etheta
 
-# Use LaTeX for all text rendering
 plt.rcParams.update({
-    "text.usetex": True,
-    "font.family": "serif",
-    "font.size": 26,
-    "axes.labelsize": 26,
-    "legend.fontsize": 20,
-    "xtick.labelsize": 14,
-    "ytick.labelsize": 14,
+	"text.usetex": True,
+	"font.family": "serif",
+	"font.size": 26,
+	"axes.labelsize": 26,
+	"legend.fontsize": 20,
+	"xtick.labelsize": 14,
+	"ytick.labelsize": 14,
 })
 
 class Render:
@@ -92,7 +117,7 @@ class Render:
 
 	def save_raw(self, path, out_path, col_name, start, end, converter):
 		data = pd.read_csv(path, index_col=False)
-		x, theta, y = remove_trail(converter.convert(data[col_name].values)[start:end])
+		x, theta, y = transform_curve(converter.convert(data[col_name].values)[start:end])
 
 		dpi = 200
 		fig = plt.figure(figsize=(12, 8), dpi=dpi, constrained_layout=True)
@@ -125,6 +150,40 @@ class Render:
 		self.save_fig(data, path + ".png")
 		self.save_data(data, path + ".csv")
 
+class SimpleData:
+	def __init__(self, path, col_name, init_v, converter):
+		print(path)
+		dpi = 100
+
+		data = pd.read_csv(path, index_col=False)
+		y = converter.convert(data[col_name].values)
+		fig = plt.figure(figsize=(12, 8), dpi=dpi, constrained_layout=True)
+
+		self.y = y
+		self.tm = []
+		self.var = []
+		self.n = []
+		self.theta = []
+
+		for i in range(0, len(init_v) - 1):
+			start = init_v[i]
+			end = init_v[i + 1]
+			C = remove_trail(y[start:end])
+			t = range(0, len(C))
+
+			E = calculate_E(C, t)
+			tau = calculate_tau(E, t)
+			theta = calculate_theta(t, tau)
+			Etheta = calculate_Etheta(E, tau)
+
+			ax = fig.add_subplot(3, 2, i + 1)
+			var = calculate_var(E, t, tau)
+			n = calculate_n(tau, var)
+			ax.scatter(theta, Etheta, label = f"N = {n}, tau = {tau}")
+			plt.legend()
+		plt.show()
+		plt.close(fig)
+
 class Data:
 	def __init__(self, path, col_name, init_v, converter):
 		print(path)
@@ -144,7 +203,7 @@ class Data:
 			self.add_range(init_v[i], init_v[i + 1])
 
 	def add_range(self, start, end):
-		x, theta, y = remove_trail(self.y[start:end])
+		x, theta, y = transform_curve(self.y[start:end])
 		fit_len = int(len(y) * 0.8)
 
 		fit = regression.CustomCurve(x[0:fit_len], y[0:fit_len])
@@ -158,9 +217,11 @@ class Data:
 		self.n.append(rd(n))
 		self.fit.append(fit.fit(x))
 
+#converter = Converter(0.0001, -0.072)
 converter = Converter(0.0001, -0.072)
 render = Render(2)
 
+SimpleData("data/plan_plate/09_06_26_01.csv", "AM1", [ 933, 1815, 2693, 3571, 4448, 5323 ], converter)
 # render.save("data/plan_plate/01_best", Data("data/plan_plate/09_06_26_01.csv", "AM1", [ 2693, 3571 ], converter)) # [ 933, 1815, 2693, 3571, 4448, 5323 ] - 3
 # render.save("data/plan_down/01_best", Data("data/plan_down/14_06_26_01.csv", "AM1", [ 3578, 4456 ], converter)) # [ 937, 1823, 2701, 3578, 4456, 5330 ] - 4
 # render.save("data/plan_up/01_best", Data("data/plan_up/20_06_26_01.csv", "AM1", [ 1120, 2000 ], converter)) # [ 1120, 2000, 2875, 3756, 4632, 5512, 6390 ] - 1
@@ -230,7 +291,7 @@ render = Render(2)
 # render.plot(Data("data/plan_down/19_06_26_13.csv", "AM1", [ 895, 1774, 2650, 3533, 4412, 5288 ], converter))
 # render.plot(Data("data/plan_up/21_06_26_13.csv", "AM1", [ 881, 1755, 2637, 3519, 4392, 5282 ], converter))
 
-render.plot(Data("data/plan_plate/02_04_26_14.csv", "AM1", [352, 766, 1184, 1598, 2018, 2433, 2847, 3255], converter))
-render.plot(Data("data/plan_down/19_06_26_14.csv", "AM1", [ 928, 1802, 2687, 3564, 4441, 5310 ], converter))
-render.plot(Data("data/plan_up/21_06_26_14.csv", "AM1", [ 887, 1771, 2647, 3527, 4406, 5290 ], converter))
+#render.plot(Data("data/plan_plate/02_04_26_14.csv", "AM1", [352, 766, 1184, 1598, 2018, 2433, 2847, 3255], converter))
+#render.plot(Data("data/plan_down/19_06_26_14.csv", "AM1", [ 928, 1802, 2687, 3564, 4441, 5310 ], converter))
+#render.plot(Data("data/plan_up/21_06_26_14.csv", "AM1", [ 887, 1771, 2647, 3527, 4406, 5290 ], converter))
 
