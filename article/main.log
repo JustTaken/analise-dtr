@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/GNU Guix) (preloaded format=pdflatex 1970.1.1)  22 JUL 2026 18:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/GNU Guix) (preloaded format=pdflatex 1970.1.1)  23 JUL 2026 19:36
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -6,9 +6,9 @@ entering extended mode
 (./main.tex
 LaTeX2e <2025-11-01>
 L3 programming layer <2026-01-19>
-(/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/base/article.cls
+(/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
-(/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/base/fleqn.clo
+(/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/base/fleqn.clo
 File: fleqn.clo 2016/12/29 v1.2b Standard LaTeX option (flush left equations)
 \mathindent=\skip49
 Applying: [2015/01/01] Make \[ robust on input line 50.
@@ -17,7 +17,7 @@ Already applied: [0000/00/00] Make \[ robust on input line 62.
 Applying: [2015/01/01] Make \] robust on input line 74.
 LaTeX Info: Redefining \] on input line 75.
 Already applied: [0000/00/00] Make \] robust on input line 83.
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/base/size12.clo
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count275
@@ -31,13 +31,13 @@ File: size12.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip50
 \belowcaptionskip=\skip51
 \bibindent=\dimen148
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/base/inputenc.sty
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2024/02/08 v1.3d Input encoding file
 \inpenc@prehook=\toks17
 \inpenc@posthook=\toks18
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/base/fontenc.sty
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2025/07/18 v2.1d Standard LaTeX package
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/generic/babel/babel.sty
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/generic/babel/babel.sty
 Package: babel 2026/02/14 v26.3 The multilingual framework for LuaLaTeX, pdfLaTeX and XeLaTeX
 \babel@savecnt=\count283
 LaTeX Encoding Info:    Redeclaring text command \ij (encoding OT1) on input line 2078.
@@ -49,26 +49,26 @@ LaTeX Encoding Info:    Ignoring declaration for text command \IJ (encoding ?) o
 LaTeX Encoding Info:    Ignoring declaration for text command \SS (encoding ?) on input line 2111.
 \U@D=\dimen149
 \l@unhyphenated=\language91
- (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/generic/babel/txtbabel.def)
+ (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/generic/babel/txtbabel.def)
 \bbl@readstream=\read2
 \bbl@dirlevel=\count284
- (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/generic/babel/locale/pt/babel-brazilian.tex)
+ (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/generic/babel/locale/pt/babel-brazilian.tex)
 Package babel Info: Importing font and identification data for brazilian
 (babel)             from babel-pt-BR.ini. Reported on input line 4330.
- (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/generic/babel-portuges/brazilian.ldf
+ (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/generic/babel-portuges/brazilian.ldf
 Language: portuges 2026/01/24 v1.2u Portuguese support from the babel system
 Package babel Info: Hyphen rules for 'brazilian' set to \l@portuguese
 (babel)             (\language73). Reported on input line 100.
 Package babel Info: Making " an active character on input line 132.
-)) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/geometry/geometry.sty
+)) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/geometry/geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
 
-(/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/graphics/keyval.sty
+(/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks19
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/generic/iftex/ifvtex.sty
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/generic/iftex/ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
- (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/generic/iftex/iftex.sty
+ (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/generic/iftex/iftex.sty
 Package: iftex 2024/12/12 v1.0g TeX engine tests
 ))
 \Gm@cnth=\count285
@@ -83,9 +83,9 @@ Package: iftex 2024/12/12 v1.0g TeX engine tests
 \Gm@layouthoffset=\dimen156
 \Gm@layoutvoffset=\dimen157
 \Gm@dimlist=\toks20
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/setspace/setspace.sty
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/tools/multicol.sty
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/tools/multicol.sty
 Package: multicol 2025/10/21 v2.0b multicolumn formatting (FMi)
 \c@tracingmulticols=\count288
 \mult@box=\box53
@@ -155,43 +155,43 @@ Package: multicol 2025/10/21 v2.0b multicolumn formatting (FMi)
 \colbreak@box=\box98
 \mc@col@check@num=\count297
 \g__mc_curr_col_int=\count298
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/float/float.sty
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count299
 \float@exts=\toks21
 \float@box=\box99
 \@float@everytoks=\toks22
 \@floatcapt=\box100
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/natbib/natbib.sty
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip54
 \bibsep=\skip55
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count300
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/newtx/newtxtext.sty
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/newtx/newtxtext.sty
 Package: newtxtext 2024/04/01 v1.744(Michael Sharpe) latex and unicode latex support for TeXGyreTermesX
  `newtxtext' v1.744, 2024/04/01 Text macros taking advantage of TeXGyre Termes and its extensions (msharpe)
-(/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/xpatch/xpatch.sty (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/xpatch/xpatch.sty (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/l3kernel/expl3.sty
 Package: expl3 2026-01-19 L3 programming layer (loader) 
- (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+ (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count301
 ))
 Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
- (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+ (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
 Package: xparse 2025-10-09 L3 Experimental document command parser
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/etoolbox/etoolbox.sty
 Package: etoolbox 2025/10/02 v2.5m e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count302
-)) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/xcolor/xcolor.sty
+)) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
- (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
+ (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/graphics-cfg/color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 274.
- (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+ (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/graphics-def/pdftex.def
 File: pdftex.def 2025/09/29 v1.2d Graphics/color driver for pdftex
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/graphics/mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
 Package xcolor Info: Model `RGB' extended on input line 1365.
@@ -202,37 +202,37 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 )
-(/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/xkeyval/xkeyval.sty
 Package: xkeyval 2025/11/04 v2.10 package option processing (HA)
- (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
+ (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/generic/xkeyval/xkeyval.tex (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/generic/xkeyval/xkvutils.tex
 \XKV@toks=\toks23
 \XKV@tempa@toks=\toks24
 \XKV@tempb@toks=\toks25
 )
 \XKV@depth=\count303
 File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
-)) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/base/textcomp.sty
+)) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2024/04/24 v2.1b Standard LaTeX package
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/generic/xstring/xstring.sty (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/generic/xstring/xstring.tex
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/generic/xstring/xstring.sty (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/generic/xstring/xstring.tex
 \xs_counta=\count304
 \xs_countb=\count305
 )
 Package: xstring 2023/08/22 v1.86 String manipulations (CT)
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/base/ifthen.sty
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/carlisle/scalefnt.sty)
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/carlisle/scalefnt.sty)
 LaTeX Font Info:    Setting ntxLF sub-encoding to TS1/0 on input line 24.
 LaTeX Font Info:    Setting ntxTLF sub-encoding to TS1/0 on input line 24.
 LaTeX Font Info:    Setting ntxOsF sub-encoding to TS1/0 on input line 24.
 LaTeX Font Info:    Setting ntxTOsF sub-encoding to TS1/0 on input line 24.
- (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/generic/kastrup/binhex.tex)
+ (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/generic/kastrup/binhex.tex)
 \ntx@tmpcnta=\count306
 \ntx@cnt=\count307
 
-(/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/fontaxes/fontaxes.sty
+(/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/fontaxes/fontaxes.sty
 Package: fontaxes 2026-01-02 v2.0.2 Font selection axes (deprecated)
 Applying: [2024-11-01] Use figureversions if present on input line 74.
- (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/figureversions/figureversions.sty
+ (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/figureversions/figureversions.sty
 Package: figureversions 2025-04-29 v1.0.1 Figure versions
 )
 Already applied: [0000-00-00] Fall back to v1 on input line 76.
@@ -252,23 +252,23 @@ Already applied: [0000-00-00] Fall back to v1 on input line 76.
 \tx@dimBB=\dimen179
 \tx@dimC=\dimen180
 LaTeX Info: Redefining \oldstylenums on input line 902.
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/newtx/newtxmath.sty
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/newtx/newtxmath.sty
 Package: newtxmath 2024/09/22 v1.754
- `newtxmath' v1.754, 2024/09/22 Math macros based originally on txfonts (msharpe) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/amsmath/amsmath.sty
+ `newtxmath' v1.754, 2024/09/22 Math macros based originally on txfonts (msharpe) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2025/07/09 v2.17z AMS math features
 \@mathmargin=\skip56
 
 For additional information on amsmath, use the `?' option.
-(/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/amsmath/amstext.sty
+(/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2024/11/17 v2.01 AMS text
- (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/amsmath/amsgen.sty
+ (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks26
 \ex@=\dimen181
-)) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
+)) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen182
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/amsmath/amsopn.sty
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
 \inf@bad=\count308
@@ -318,11 +318,11 @@ LaTeX Info: Redefining \Relbar on input line 970.
 \mathdisplay@stack=\toks30
 LaTeX Info: Redefining \[ on input line 2950.
 LaTeX Info: Redefining \] on input line 2951.
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/oberdiek/centernot.sty
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/oberdiek/centernot.sty
 Package: centernot 2016/05/16 v1.4 Centers the not symbol horizontally (HO)
 )
 \tx@cntz=\count320
- (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/generic/kastrup/binhex.tex)
+ (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/generic/kastrup/binhex.tex)
 \tx@Isdigit=\count321
 \tx@IsAlNum=\count322
 \tx@tA=\toks31
@@ -425,9 +425,9 @@ LaTeX Font Info:    Redeclaring math accent \ddot on input line 992.
 LaTeX Font Info:    Redeclaring math accent \vec on input line 2057.
 LaTeX Info: Redefining \Bbbk on input line 2847.
 LaTeX Info: Redefining \not on input line 2995.
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/colortbl/colortbl.sty
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/colortbl/colortbl.sty
 Package: colortbl 2024/10/29 v1.0k Color table columns (DPC)
- (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/tools/array.sty
+ (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/tools/array.sty
 Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
 \col@sep=\dimen190
 \ar@mcellbox=\box103
@@ -440,24 +440,24 @@ Package: array 2025/09/25 v2.6n Tabular extension package (FMi)
 \everycr=\toks35
 \minrowclearance=\skip61
 \rownum=\count323
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/graphics/graphicx.sty
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
- (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/graphics/graphics.sty
+ (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
- (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/graphics/trig.sty
+ (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 106.
 )
 \Gin@req@height=\dimen192
 \Gin@req@width=\dimen193
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/eso-pic/eso-pic.sty
 Package: eso-pic 2025/12/10 v3.0d eso-pic (RN)
 \ESO@tempdima=\dimen194
 \ESO@tempdimb=\dimen195
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/booktabs/booktabs.sty
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/booktabs/booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen196
 \lightrulewidth=\dimen197
@@ -476,19 +476,19 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisruleclass=\count326
 \@lastruleclass=\count327
 \@thisrulewidth=\dimen264
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/multirow/multirow.sty
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/multirow/multirow.sty
 Package: multirow 2024/11/12 v2.9 Span multiple rows of a table
 \multirow@colwidth=\skip62
 \multirow@cntb=\count328
 \multirow@dima=\skip63
 \bigstrutjot=\dimen265
 )
-(/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/makecell/makecell.sty
+(/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/makecell/makecell.sty
 Package: makecell 2009/08/03 V0.1e Managing of Tab Column Heads and Cells
 \rotheadsize=\dimen266
 \c@nlinenum=\count329
 \TeXr@lab=\toks36
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/tools/tabularx.sty
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/tools/tabularx.sty
 Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
 \TX@col@width=\dimen267
 \TX@old@table=\dimen268
@@ -497,9 +497,9 @@ Package: tabularx 2023/12/11 v2.12a `tabularx' package (DPC)
 \TX@delta=\dimen271
 \TX@cols=\count330
 \TX@ftn=\toks37
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/caption/caption.sty
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/caption/caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
- (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/caption/caption3.sty
+ (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/caption/caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
 \caption@tempdima=\dimen272
 \captionmargin=\dimen273
@@ -514,7 +514,7 @@ Package caption Info: Standard document class detected.
 \c@caption@flags=\count331
 \c@continuedfloat=\count332
 Package caption Info: float package is loaded.
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/ragged2e/ragged2e.sty
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/ragged2e/ragged2e.sty
 Package: ragged2e 2023/06/22 v3.6 ragged2e Package
 \CenteringLeftskip=\skip64
 \RaggedLeftLeftskip=\skip65
@@ -530,13 +530,13 @@ Package: ragged2e 2023/06/22 v3.6 ragged2e Package
 \RaggedLeftParindent=\skip75
 \RaggedRightParindent=\skip76
 \JustifyingParindent=\skip77
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/tools/indentfirst.sty
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/tools/indentfirst.sty
 Package: indentfirst 2023/07/02 v1.03 Indent first paragraph (DPC)
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/hyphenat/hyphenat.sty
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/hyphenat/hyphenat.sty
 Package: hyphenat 2009/09/02 v2.3c hyphenation utilities
 \langwohyphens=\language92
 LaTeX Info: Redefining \_ on input line 43.
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/titlesec/titlesec.sty
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/titlesec/titlesec.sty
 Package: titlesec 2025/01/04 v2.17 Sectioning titles
 \ttl@box=\box105
 \beforetitleunit=\skip78
@@ -547,7 +547,7 @@ Package: titlesec 2025/01/04 v2.17 Sectioning titles
 \titlewidth=\dimen282
 \titlewidthlast=\dimen283
 \titlewidthfirst=\dimen284
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/enumitem/enumitem.sty
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/enumitem/enumitem.sty
 Package: enumitem 2025/02/06 v3.11 Customized lists
 \labelindent=\skip80
 \enit@outerparindent=\dimen285
@@ -556,7 +556,7 @@ Package: enumitem 2025/02/06 v3.11 Customized lists
 \enit@count@id=\count333
 \enitdp@description=\count334
 )
-(/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+(/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \f@nch@headwidth=\skip81
 \f@nch@offset@elh=\skip82
@@ -575,7 +575,7 @@ Package: fancyhdr 2025/02/07 v5.2 Extensive control of page headers and footers
 \@temptokenb=\toks40
 )
 LaTeX Font Info:    Trying to load font information for T1+ntxtlf on input line 184.
- (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/newtx/t1ntxtlf.fd
+ (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/newtx/t1ntxtlf.fd
 File: t1ntxtlf.fd 2021/05/24 v1.1 font definition file for T1/ntx/tlf
 )
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
@@ -588,7 +588,7 @@ Package babel Info: 'brazilian' activates 'portuges' shorthands.
 
 LaTeX Font Info:    Checking defaults for OML/ntxmi/m/it on input line 184.
 LaTeX Font Info:    Trying to load font information for OML+ntxmi on input line 184.
- (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/newtx/omlntxmi.fd
+ (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/newtx/omlntxmi.fd
 File: omlntxmi.fd 2015/08/25 Fontinst v1.933 font definitions for OML/ntxmi.
 )
 LaTeX Font Info:    ... okay on input line 184.
@@ -604,19 +604,19 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 184.
 LaTeX Font Info:    ... okay on input line 184.
 LaTeX Font Info:    Checking defaults for U/ntxexa/m/n on input line 184.
 LaTeX Font Info:    Trying to load font information for U+ntxexa on input line 184.
- (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/newtx/untxexa.fd
+ (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/newtx/untxexa.fd
 File: untxexa.fd 2012/04/16 Fontinst v1.933 font definitions for U/ntxexa.
 )
 LaTeX Font Info:    ... okay on input line 184.
 LaTeX Font Info:    Checking defaults for LMS/ntxsy/m/n on input line 184.
 LaTeX Font Info:    Trying to load font information for LMS+ntxsy on input line 184.
- (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/newtx/lmsntxsy.fd
+ (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/newtx/lmsntxsy.fd
 File: lmsntxsy.fd 2016/07/02 Fontinst v1.933 font definitions for LMS/ntxsy.
 )
 LaTeX Font Info:    ... okay on input line 184.
 LaTeX Font Info:    Checking defaults for LMX/ntxexx/m/n on input line 184.
 LaTeX Font Info:    Trying to load font information for LMX+ntxexx on input line 184.
- (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/newtx/lmxntxexx.fd
+ (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/newtx/lmxntxexx.fd
 File: lmxntxexx.fd 2016/07/03 Fontinst v1.933 font definitions for LMX/ntxexx.
 )
 LaTeX Font Info:    ... okay on input line 184.
@@ -655,7 +655,7 @@ LaTeX Font Info:    ... okay on input line 184.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-(/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+(/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count335
 \scratchdimen=\dimen286
@@ -668,10 +668,10 @@ LaTeX Font Info:    ... okay on input line 184.
 \MPnumerator=\count339
 \makeMPintoPDFobject=\count340
 \everyMPtoPDFconversion=\toks42
-) (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+) (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 484.
- (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+ (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 \c@mv@tabular=\count341
@@ -685,7 +685,7 @@ LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 LaTeX Font Info:    Font shape `T1/ntxtlf/b/n' will be
 (Font)              scaled to size 14.0pt on input line 191.
 LaTeX Font Info:    Trying to load font information for OT1+minntx on input line 197.
- (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/newtx/ot1minntx.fd
+ (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/newtx/ot1minntx.fd
 File: ot1minntx.fd 2023/09/09 v1.1 font definition file for OT1/minntx
 )
 LaTeX Font Info:    Font shape `OT1/minntx/m/n' will be
@@ -713,7 +713,7 @@ LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
 LaTeX Font Info:    Font shape `LMX/ntxexx/m/n' will be
 (Font)              scaled to size 6.6pt on input line 197.
 LaTeX Font Info:    Trying to load font information for U+ntxmia on input line 197.
- (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/newtx/untxmia.fd
+ (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/newtx/untxmia.fd
 File: untxmia.fd 2024/04/09 Fontinst v1.933 font definitions for U/ntxmia.
 )
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
@@ -723,7 +723,7 @@ LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
 LaTeX Font Info:    Font shape `U/ntxmia/m/it' will be
 (Font)              scaled to size 6.6pt on input line 197.
 LaTeX Font Info:    Trying to load font information for U+ntxsym on input line 197.
- (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/newtx/untxsym.fd
+ (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/newtx/untxsym.fd
 File: untxsym.fd 2023/08/16 Fontinst v1.933 font definitions for U/ntxsym.
 )
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
@@ -733,7 +733,7 @@ LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
 LaTeX Font Info:    Font shape `U/ntxsym/m/n' will be
 (Font)              scaled to size 6.6pt on input line 197.
 LaTeX Font Info:    Trying to load font information for U+ntxsyc on input line 197.
- (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/newtx/untxsyc.fd
+ (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/newtx/untxsyc.fd
 File: untxsyc.fd 2012/04/12 Fontinst v1.933 font definitions for U/ntxsyc.
 )
 LaTeX Font Info:    Font shape `U/ntxsyc/m/n' will be
@@ -799,21 +799,21 @@ LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 LaTeX Font Info:    Font shape `U/ntxexa/m/n' will be
 (Font)              scaled to size 5.5pt on input line 203.
 LaTeX Font Info:    Font shape `T1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 234.
-LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input line 234.
- (/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
+(Font)              scaled to size 8.0pt on input line 230.
+LaTeX Font Info:    Trying to load font information for TS1+ntxtlf on input line 230.
+ (/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/tex/latex/newtx/ts1ntxtlf.fd
 File: ts1ntxtlf.fd 2015/01/18 v1.0 fd file for TS1/ntxtlf
 )
 LaTeX Font Info:    Font shape `TS1/ntxtlf/m/n' will be
-(Font)              scaled to size 8.0pt on input line 234.
+(Font)              scaled to size 8.0pt on input line 230.
 <image/header.jpg, id=1, 1445.4pt x 359.84438pt>
 File: image/header.jpg Graphic file (type jpg)
 <use image/header.jpg>
-Package pdftex.def Info: image/header.jpg  used on input line 234.
+Package pdftex.def Info: image/header.jpg  used on input line 230.
 (pdftex.def)             Requested size: 597.51405pt x 138.28519pt.
  [1
 
-{/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}{/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc} <./image/header.jpg>]
+{/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/fonts/map/pdftex/updmap/pdftex.map}{/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ec-tlf.enc}{/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/fonts/enc/dvips/newtx/ntx-ot1-tlf.enc}{/gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/fonts/enc/dvips/tex-gyre/q-ts1.enc} <./image/header.jpg>]
 *geometry* verbose mode - [ newgeometry ] result:
 * driver: pdftex
 * paper: a4paper
@@ -847,94 +847,99 @@ Package pdftex.def Info: image/header.jpg  used on input line 234.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 255--256
+Underfull \hbox (badness 10000) in paragraph at lines 251--252
 \T1/ntxtlf/m/n/12 de forma ge-ral, as eta-pas de la-vra,
  []
 
 
-Overfull \hbox (1.18045pt too wide) in paragraph at lines 255--256
+Overfull \hbox (1.18045pt too wide) in paragraph at lines 251--252
 \T1/ntxtlf/m/n/12 be-ne-fi-ci-a-mento e dis-po-si-ção ou re-a-pro-vei-ta-mento
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 255--256
+Underfull \hbox (badness 10000) in paragraph at lines 251--252
 \T1/ntxtlf/m/n/12 destacam-se ope-ra-ções como bri-ta-gem,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 255--256
+Underfull \hbox (badness 10000) in paragraph at lines 251--252
 \T1/ntxtlf/m/n/12 in-clu-indo bri-ta-do-res, mo-i-nhos, bom-bas,
  []
 
 
-Underfull \hbox (badness 7133) in paragraph at lines 255--256
+Underfull \hbox (badness 7133) in paragraph at lines 251--252
 \T1/ntxtlf/m/n/12 tu-bu-la-ções, hi-dro-ci-clo-nes e sis-te-mas de
  []
 
 
-Underfull \hbox (badness 7832) in paragraph at lines 259--260
+Underfull \hbox (badness 7832) in paragraph at lines 255--256
 \T1/ntxtlf/m/n/12 am-pla-mente uti-li-za-dos no be-ne-fi-ci-a-mento
  []
 
 
-Underfull \hbox (badness 7415) in paragraph at lines 259--260
+Underfull \hbox (badness 7415) in paragraph at lines 255--256
 \T1/ntxtlf/m/n/12 das eta-pas de se-pa-ra-ção, es-pe-ci-al-mente
  []
 
 
-Underfull \hbox (badness 5756) in paragraph at lines 259--260
+Underfull \hbox (badness 5756) in paragraph at lines 255--256
 \T1/ntxtlf/m/n/12 na flo-ta-ção. Es-ses equi-pa-men-tos são
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 262--263
+Underfull \hbox (badness 10000) in paragraph at lines 258--259
 []\T1/ntxtlf/m/n/12 Como al-ter-na-tiva aos tan-ques
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 262--263
+Underfull \hbox (badness 10000) in paragraph at lines 258--259
 \T1/ntxtlf/m/n/12 de con-di-ci-o-na-mento con-ven-ci-o-nais, os
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 262--263
+Underfull \hbox (badness 10000) in paragraph at lines 258--259
 \T1/ntxtlf/m/n/12 sig-ni-fi-ca-ti-va-mente as ne-ces-si-da-des de
  []
 
 [2
 
 ]
-<image/figura.png, id=15, 481.8pt x 361.35pt>
-File: image/figura.png Graphic file (type png)
-<use image/figura.png>
-Package pdftex.def Info: image/figura.png  used on input line 309.
-(pdftex.def)             Requested size: 230.46729pt x 172.85054pt.
+<image/system.png, id=15, 1445.4pt x 813.0375pt>
+File: image/system.png Graphic file (type png)
+<use image/system.png>
+Package pdftex.def Info: image/system.png  used on input line 305.
+(pdftex.def)             Requested size: 230.46729pt x 129.62964pt.
 
-Underfull \hbox (badness 5417) in paragraph at lines 317--318
+Underfull \hbox (badness 5417) in paragraph at lines 313--314
 \T1/ntxtlf/m/n/12 con-ver-ti-dos para con-cen-tra-ção den-tro do
  []
 
-<image/01_plate.png, id=16, 867.24pt x 578.16pt>
+
+Underfull \hbox (badness 5036) in paragraph at lines 335--336
+\T1/ntxtlf/m/n/12 de re-si-dên-cia adi-men-si-o-nal, em res-posta
+ []
+
+<image/01_plate.png, id=17, 867.24pt x 578.16pt>
 File: image/01_plate.png Graphic file (type png)
 <use image/01_plate.png>
-Package pdftex.def Info: image/01_plate.png  used on input line 343.
+Package pdftex.def Info: image/01_plate.png  used on input line 339.
 (pdftex.def)             Requested size: 230.46729pt x 153.64394pt.
-[3 <./image/figura.png (PNG copy)>]
+[3 <./image/system.png>]
 
-LaTeX Warning: Reference `fig:down_first_curve' on page 4 undefined on input line 348.
+LaTeX Warning: Reference `fig:down_first_curve' on page 4 undefined on input line 344.
 
-<image/01_down.png, id=23, 867.24pt x 578.16pt>
+<image/01_down.png, id=24, 867.24pt x 578.16pt>
 File: image/01_down.png Graphic file (type png)
 <use image/01_down.png>
-Package pdftex.def Info: image/01_down.png  used on input line 352.
+Package pdftex.def Info: image/01_down.png  used on input line 348.
 (pdftex.def)             Requested size: 230.46729pt x 153.64394pt.
-<image/01_up.png, id=24, 867.24pt x 578.16pt>
+<image/01_up.png, id=25, 867.24pt x 578.16pt>
 File: image/01_up.png Graphic file (type png)
 <use image/01_up.png>
-Package pdftex.def Info: image/01_up.png  used on input line 359.
+Package pdftex.def Info: image/01_up.png  used on input line 355.
 (pdftex.def)             Requested size: 230.46729pt x 153.64394pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 364--365
+Underfull \hbox (badness 10000) in paragraph at lines 360--361
 []\T1/ntxtlf/m/n/12 Pode-se ver, ainda nos pri-mei-ros
  []
 
@@ -954,15 +959,15 @@ LaTeX Warning: There were undefined references.
 Here is how much of TeX's memory you used:
  12404 strings out of 467527
  198089 string characters out of 5389767
- 622391 words of memory out of 5000000
+ 621391 words of memory out of 5000000
  41093 multiletter control sequences out of 15000+600000
  679221 words of font info for 113 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 74i,17n,117p,1252b,674s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/fonts/type1/public/tex-gyre/qtmr.pfb></gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/fonts/type1/public/newtx/txsys.pfb></gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></gnu/store/9dz0v821z77p5xbnpi7b77kzqmq19bbc-profile/share/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
-Output written on main.pdf (4 pages, 411287 bytes).
+ 74i,17n,117p,1255b,674s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/fonts/type1/public/newtx/NewTXMI.pfb></gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/fonts/type1/public/tex-gyre/qtmr.pfb></gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/fonts/type1/public/newtx/txmiaX.pfb></gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/fonts/type1/public/newtx/txsys.pfb></gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/fonts/type1/public/newtx/ztmb.pfb></gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/fonts/type1/public/newtx/ztmr.pfb></gnu/store/8911lnxywd6028w66fl0crxv5scgixfv-profile/share/texmf-dist/fonts/type1/public/newtx/ztmri.pfb>
+Output written on main.pdf (4 pages, 452003 bytes).
 PDF statistics:
- 67 PDF objects out of 1000 (max. 8388607)
+ 68 PDF objects out of 1000 (max. 8388607)
  37 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
